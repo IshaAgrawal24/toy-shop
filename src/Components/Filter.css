@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.filter {
+  text-align: center;
+  width: 100%;
+  /* border: 1px solid black; */
+}
+.filter select {
+  margin: 0 4%;
+  padding: 1.2% 2%;
+  border-radius: 10px;
+  background-color: #8082c1;
+  border: none;
+  color: white;
+  font-weight: 700;
+  box-shadow: 1px 1px 5px #808080;
+  font-size: 15px;
+}
+.filter select:focus {
+  outline: none;
+}
+.filter select option {
+  margin: 4%;
+  font-weight: 700;
+}
+
+@media (max-width: 540px){
+  .filter{
+    margin: 5% 0;
+  }
+  .filter select{
+    margin:  2%;
+    padding: 1.2% 1%;
+    font-size: 13px;
+  }
+}

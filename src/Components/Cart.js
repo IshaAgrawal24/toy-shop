@@ -112,6 +112,23 @@ const Cart = () => {
   const continueMethod = () => {
     navigate("/shop");
   };
+
+  const clearCart = () => {
+    if (window.confirm("Delete all the Items from Cart?")) {
+      addCart.map((item, index) => {
+        setSelectList(
+          selectList.map((mainItem, mainIndex) => {
+            if (item.id == mainItem.id) {
+              mainItem.add = 0;
+            }
+            return mainItem;
+          })
+        );
+      });
+      setAddCart([]);
+      setNumber(0);
+    }
+  };
   return (
     <>
       <div className="mainCart">
@@ -178,6 +195,9 @@ const Cart = () => {
               </button>
               <button className="emptyButton" onClick={continueMethod}>
                 CONTINUE SHOPPING
+              </button>
+              <button className="emptyButton" onClick={clearCart}>
+                CLEAR CART
               </button>
             </div>
           </>

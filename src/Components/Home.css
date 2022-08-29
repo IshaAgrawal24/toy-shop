@@ -179,6 +179,16 @@
   flex: 0 0 47%;
   margin-right: 3%;
 }
+.testimonialImage{
+  margin:0  auto 3%;
+  width: 80px;
+  /* border-radius: 50%; */
+  height: 80px;
+}
+.testimonialImage img{
+  width: 100%;
+  height: 100%;
+}
 .testimonialChild p {
   line-height: 1.4;
   text-align: justify;
@@ -219,5 +229,4 @@
   .testimonialChild {
     margin: 4% auto;
   }
-
 }

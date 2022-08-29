@@ -156,6 +156,8 @@
   margin: 4% 0;
 }
 .modalButton {
+  
+ 
   width: 100%;
   margin: 4% 0;
 }
@@ -167,6 +169,9 @@
   padding: 2.8% 14%;
   border: none;
   box-shadow: 1px 1px 5px #808080;
+  background-color: red;
+  color: white;
+  font-weight: 800;
 }
 /* @media (max-width: 600px) {
   .cartPage {

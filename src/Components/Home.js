@@ -104,7 +104,10 @@ const Home = () => {
       <div className="testimonial">
         <h2>Testimonials</h2>
         <div className="testimonial-section">
-          <div className="testimonialChild">
+          <div className="testimonialChild">  
+            <div className="testimonialImage">
+              <img src="/images/girlImage.png" alt="" />
+            </div>
             <p>
               "Lorem Ipsum is simply dummy text of the printing and type setting
               industry. Lorem Ipsum has been the industry's standard dummy text
@@ -114,6 +117,9 @@ const Home = () => {
             <span>~Kusum Sharma</span>
           </div>
           <div className="testimonialChild">
+            <div className="testimonialImage">
+              <img src="/images/boyImage.webp" alt="" />
+            </div>
             <p>
               "Lorem Ipsum is simply dummy text of the printing and type setting
               industry. Lorem Ipsum has been the industry's standard dummy text

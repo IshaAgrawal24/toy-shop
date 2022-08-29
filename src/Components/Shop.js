@@ -5,7 +5,7 @@ import Nav from "./Nav";
 import CartContext from "../Context";
 import { useContext } from "react";
 import Filter from "./Filter";
-import {  Modal } from "@mui/material";
+import { Modal } from "@mui/material";
 
 const Shop = () => {
   const [open, setOpen] = useState(false);

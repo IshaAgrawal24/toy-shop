@@ -1,7 +1,6 @@
-import React from "react";
+import React,{ useContext } from "react";
 import { Link } from "react-router-dom";
-import CartContext from "../Context";
-import { useContext } from "react";
+import CartContext from "../../Context";
 import "./Nav.css";
 
 const Nav = () => {

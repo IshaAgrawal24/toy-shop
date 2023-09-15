@@ -18,7 +18,7 @@
 .logo a {
   color: #878aff;
   font-weight: 900;
-  font-size: 20px;
+  font-size: 2vw;
   font-family: "Dancing Script", cursive;
   font-family: "DynaPuff", cursive;
 }
@@ -33,6 +33,7 @@
 .searchBar {
   width: 50%;
 }
+
 #search {
   margin-left: 10%;
   width: 80%;
@@ -42,6 +43,7 @@
   border-bottom: 1px solid gray;
   padding: 2%;
 }
+
 #search:focus {
   outline: none;
 }

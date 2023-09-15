@@ -1,10 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useEffect,useContext } from "react";
 import "./Checkout.css";
 import CartContext from "../Context";
-import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import Nav from "./Nav";
-// import Login from "./Login";
+import Nav from "./Navbar/Nav";
+
 const Checkout = () => {
   let navigate = useNavigate();
 
@@ -26,7 +25,6 @@ const Checkout = () => {
     selectList,
     setSelectList,
     setIsSubmit,
-    isLogged,
   } = useContext(CartContext);
 
   // PLACE ORDER PAGE
@@ -53,8 +51,6 @@ const Checkout = () => {
       return total + item.price * item.quantity;
     }, 0)
   );
-
-  // console.log(addCart);
 
   return (
     <>

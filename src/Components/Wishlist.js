@@ -1,15 +1,14 @@
-import React, { useState } from "react";
+import React, { useState ,useContext} from "react";
 import { Link } from "react-router-dom";
 import "./Wishlist.css";
-import Nav from "./Nav";
+import Nav from "./Navbar/Nav";
 import CartContext from "../Context";
-import { useContext } from "react";
 import { Modal } from "@mui/material";
 
 const Wishlist = () => {
   const [open, setOpen] = useState(false);
   const [singleIndex, setSingleIndex] = useState();
-  const { setNumber, setAddCart, addCart, selectList, setSelectList,list } =
+  const { setNumber, setAddCart, addCart, selectList, setSelectList } =
     useContext(CartContext);
 
   const addToCart = (event) => {

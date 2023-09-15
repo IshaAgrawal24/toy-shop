@@ -10,7 +10,7 @@ const Header = () => {
   return (
     <div className="header">
       <div className="none">
-        <img src="header.png" alt="" />
+        <img src="header.png" alt="header image" />
       </div>
       <div className="headerContent">
         <h2>

@@ -1,11 +1,8 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState,useContext } from "react";
+import { Link,useNavigate } from "react-router-dom";
 import CartContext from "../Context";
-import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
-
 import "./Cart.css";
-import Nav from "./Nav";
+import Nav from "./Navbar/Nav";
 import { Modal } from "@mui/material";
 
 const Cart = () => {

@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState,useContext } from "react";
 import { Link } from "react-router-dom";
 import "./Shop.css";
-import Nav from "./Nav";
+import Nav from "./Navbar/Nav";
 import CartContext from "../Context";
-import { useContext } from "react";
 import Filter from "./Filter";
 import { Modal } from "@mui/material";
 

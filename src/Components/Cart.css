@@ -3,9 +3,11 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 .mainCart {
   background-color: #f7fbff;
 }
+
 #navFixed {
   background-color: #c2e3ff;
   position: fixed;

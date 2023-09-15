@@ -14,15 +14,15 @@
   overflow: hidden;
   width: 85%;
   top: 0;
-  /* left: 0; */
 }
+
 .cartPage {
   width: 55%;
   padding-top: 14%;
   margin: 0 auto 4%;
-  /* border: 1px solid #eee; */
   text-align: center;
 }
+
 .singleCart {
   background-color: white;
   border-radius: 10px;
@@ -32,10 +32,12 @@
   display: flex;
   justify-content: space-between;
 }
+
 #cartImage {
   width: 150px;
   height: 140px;
 }
+
 #cartImage img {
   width: 100%;
   /* max-width: 140px; */

@@ -1,26 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import CartContext from "../Context";
 import { useContext } from "react";
 import "./Nav.css";
-import { Button, Drawer, List, ListItem, ListItemText } from "@mui/material";
-import { useNavigate } from "react-router-dom";
 
 const Nav = () => {
-  const {
-    number,
-    loggedUser,
-    isLogged,
-    setDisplay,
-    display,
-    inputs,
-    setInputs,
-    search,
-  } = useContext(CartContext);
-
-  // let navigate = useNavigate();
-
-  // const [state, setState] = useState(false);
+  const { number, setDisplay, display, inputs, setInputs, search } =
+    useContext(CartContext);
 
   const searchIcon = () => {
     if (display.prev === "none") {

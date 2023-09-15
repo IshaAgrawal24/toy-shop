@@ -19,6 +19,14 @@ const Shop = () => {
       left: 0,
       behavior: "smooth",
     });
+    // const headers = {
+    //   "Access-Control-Allow-Origin": *
+    // }
+    fetch("http://localhost:7000/toys")
+      .then((res) => res.json())
+      .then((response) => {
+        console.log(response);
+      });
   }, []);
 
   const wishlistMethod = (event) => {

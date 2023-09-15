@@ -7,8 +7,9 @@ import Cart from "./Components/Cart";
 import Checkout from "./Components/Checkout";
 import Placeorder from "./Components/Placeorder";
 import Wishlist from "./Components/Wishlist";
-import Login from "./Components/Login";
-import Signup from "./Components/Signup";
+import Login from "./Components/Auth/Login/Login";
+import Signup from "./Components/Auth/Signup/Signup";
+
 function App() {
   return (
     <div className="App">

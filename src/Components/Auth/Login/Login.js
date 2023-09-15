@@ -1,9 +1,8 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import CartContext from "../Context";
-import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState, useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import CartContext from "../../../Context";
 import "./Login.css";
+
 const Login = () => {
   let navigate = useNavigate();
   const { userArr, setIsLogged, setLoggedUser, number } =
@@ -38,9 +37,10 @@ const Login = () => {
     }
   };
 
-  const homePage = () =>{
-    navigate("/")
-  }
+  const homePage = () => {
+    navigate("/");
+  };
+  
   return (
     <div className="loginDiv">
       <div className="loginMain">
@@ -74,15 +74,16 @@ const Login = () => {
               onChange={(event) => setPassword(event.target.value)}
             />
           </div>
+
           <p>
             New Here? <Link to="/signup">SIGN UP</Link>
           </p>
           <button onClick={login}>LOG IN</button>
+
           <div className="homeIcon">
-          <i class="fa-solid fa-house" onClick={homePage}></i>
+            <i class="fa-solid fa-house" onClick={homePage}></i>
+          </div>
         </div>
-        </div>
-        
       </div>
     </div>
   );

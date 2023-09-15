@@ -20,15 +20,14 @@ export function CartProvider({ children }) {
   const [loggedUser, setLoggedUser] = useState("");
   const [count, setCount] = useState(1);
   const [inputs, setInputs] = useState("");
-  // const [wishlist, setWishlist] = useState([]);
 
+  // SEARCH FUNC
   const search = (event) => {
     event.preventDefault();
     navigate("/shop");
     if (inputs == "") {
       setSelectList(list);
     } else {
-      // setIsSubmit(true);
       setSelectList(
         list.filter((item) => {
           return item.name.toLowerCase().includes(inputs);
@@ -36,7 +35,6 @@ export function CartProvider({ children }) {
       );
     }
   };
-  // console.log(selectList);
 
   return (
     <CartContext.Provider
@@ -66,8 +64,6 @@ export function CartProvider({ children }) {
         search,
         display,
         setDisplay,
-        // wishlist,
-        // setWishlist,
       }}
     >
       {children}

@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import CartContext from "../Context";
-import { useContext } from "react";
+import React, { useState, useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import CartContext from "../../../Context";
 
 const Signup = () => {
+  const navigate = useNavigate();
   const { userArr, setUserArr, count, setCount } = useContext(CartContext);
 
   const [email, setEmail] = useState("");
@@ -40,6 +40,9 @@ const Signup = () => {
 
         setPassword("");
         setRePassword("");
+        setTimeout(() => {
+          navigate("/login");
+        }, 800);
       }
     }
   };

@@ -1,11 +1,12 @@
 import React from "react";
+import "./Benefit.css";
 
 const Benefit = () => {
   return (
     <div className="benefit">
       <div className="singleBenefit">
         <div className="benefit-icon">
-          <i class="fa-brands fa-cc-amazon-pay"></i>
+          <i className="fa-brands fa-cc-amazon-pay"></i>
         </div>
         <div className="benefit-content">
           <h4>Fast Payment</h4>
@@ -17,7 +18,7 @@ const Benefit = () => {
       </div>
       <div className="singleBenefit">
         <div className="benefit-icon">
-          <i class="fa-solid fa-arrow-right-arrow-left"></i>
+          <i className="fa-solid fa-arrow-right-arrow-left"></i>
         </div>
         <div className="benefit-content">
           <h4>Return & Exchange</h4>
@@ -29,7 +30,7 @@ const Benefit = () => {
       </div>
       <div className="singleBenefit">
         <div className="benefit-icon">
-          <i class="fa-solid fa-truck"></i>
+          <i className="fa-solid fa-truck"></i>
         </div>
         <div className="benefit-content">
           <h4>Fast Delivery</h4>

@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.footer {
+  margin-top: 60px;
+  background-color: #323355;
+  padding: 3%;
+  color: white;
+  text-align: center;
+}
+.footer span {
+  font-weight: 900;
+  font-family: "DynaPuff", cursive;
+}

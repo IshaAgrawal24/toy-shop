@@ -16,7 +16,7 @@ const Placeorder = () => {
   return (
     <div className="placeOrder">
       <div>
-        <i class="fa-solid fa-circle-check"></i>
+        <i className="fa-solid fa-circle-check"></i>
       </div>
       <h1>Thank You!</h1>
       <p>You order was successfuly completed.</p>

@@ -12,7 +12,7 @@
   background-color: #c2e3ff;
   position: fixed;
   overflow: hidden;
-  width: 85%;
+  width: 95%;
   top: 0;
 }
 
@@ -40,7 +40,6 @@
 
 #cartImage img {
   width: 100%;
-  /* max-width: 140px; */
   height: 100%;
 }
 .data {
@@ -57,15 +56,13 @@
 .quantity {
   background-color: white;
   border: 1px solid black;
-  /* color: white; */
-  /* background-color: #252525; */
-  /* border: none; */
   border-radius: 50%;
   padding: 3%;
   margin: 4% 2%;
   font-size: 10px;
   cursor: pointer;
 }
+
 #line {
   width: 90%;
   margin: auto;
@@ -76,15 +73,16 @@
   display: flex;
   justify-content: space-around;
 }
+
 #totalAmount {
   font-weight: 700;
 }
+
 .cartButton {
   display: flex;
-  /* align-items: center; */
-  /* border: 1px solid black; */
   justify-content: center;
 }
+
 .emptyButton {
   margin-left: 2%;
   margin-bottom: 2%;

@@ -4,44 +4,9 @@
   box-sizing: border-box;
 }
 
-/* BENEFIT  */
-.benefit {
-  margin: 3% 0;
-  display: flex;
-}
-.singleBenefit {
-  width: 29%;
-  text-align: center;
-  margin-left: 3%;
-  padding: 2%;
-}
-.benefit-icon {
-  display: inline-block;
-  text-align: center;
-  margin: 3% 4% 5% 0;
-  padding: 4%;
-  border-radius: 50%;
-  background-color: #c2e3ff;
-  box-shadow: 1px 1px 4px #878aff;
-}
-.benefit-icon i {
-  font-size: 1vw;
-  color: #323355;
-}
-.benefit-content h4 {
-  font-size: 1vw;
-  color: #323355;
-  font-family: "DynaPuff", cursive;
-  margin: 4% 0;
-}
-.benefit-content p {
-  color: #808080;
-  font-size: .8vw;
-}
-
 /* OFFERS  */
 .offers {
-  margin: 2% auto;
+  margin: 60px auto 0;
   width: 80%;
   border-radius: 7px;
   background-color: #c2e3ff;
@@ -70,13 +35,13 @@
   margin: 10% 0 10% 10%;
   border-radius: 7px;
 }
- .mainOffer {
+.mainOffer {
   text-align: center;
   color: #323355;
   font-weight: 900;
   margin: 3% 0;
 }
- .offerFor {
+.offerFor {
   font-size: 15px;
   text-align: center;
   font-weight: 800;
@@ -105,7 +70,7 @@
 
 /* BESTSELLERS  */
 .BestSellersMain {
-  margin: 8% 0;
+  margin: 60px auto 0;
 }
 .BestSellersMain h2 {
   text-decoration: underline;
@@ -155,55 +120,7 @@
   font-weight: 900;
 }
 
-/* TESTIMONIALS  */
-.testimonial {
-  background-color: #c2e3ff;
-  margin: 6% auto;
-  width: 90%;
-  padding: 4% 3%;
-  border-radius: 7px;
-}
-.testimonial h2 {
-  text-align: center;
-  color: #323355;
-  font-family: "DynaPuff", cursive;
-}
-.testimonial-section {
-  margin: 6% 2%;
-  display: flex;
-  flex-wrap: wrap;
-}
-.testimonialChild {
-  padding: 4%;
-  background-color: #fff;
-  border-radius: 10px;
-  flex: 0 0 47%;
-  margin-right: 3%;
-}
-.testimonialImage{
-  margin:0  auto 3%;
-  width: 80px;
-  /* border-radius: 50%; */
-  height: 80px;
-}
-.testimonialImage img{
-  width: 100%;
-  height: 100%;
-}
-.testimonialChild p {
-  line-height: 1.4;
-  text-align: justify;
-}
-.testimonialChild span {
-  font-weight: 900;
-  float: right;
-  margin: 2% 0;
-}
-
 @media (max-width: 580px) {
-  .benefit {
-    flex-direction: column;
-  }
   .singleBenefit {
     width: 80%;
     margin: auto;

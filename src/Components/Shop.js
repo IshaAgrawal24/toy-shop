@@ -1,4 +1,4 @@
-import React, { useEffect, useState,useContext } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import "./Shop.css";
 import Nav from "./Navbar/Nav";
@@ -21,11 +21,11 @@ const Shop = () => {
     // const headers = {
     //   "Access-Control-Allow-Origin": *
     // }
-    fetch("http://localhost:7000/toys")
-      .then((res) => res.json())
-      .then((response) => {
-        console.log(response);
-      });
+    // fetch("http://localhost:7000/toys")
+    //   .then((res) => res.json())
+    //   .then((response) => {
+    //     console.log(response);
+    //   });
   }, []);
 
   const wishlistMethod = (event) => {

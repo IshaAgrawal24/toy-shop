@@ -7,17 +7,13 @@
   background-color: #c3e3ff;
   position: fixed;
   overflow: hidden;
-  width: 85%;
+  width: 95%;
   top: 0;
-  /* left: 0; */
 }
 .shopMain {
   margin: 12% 0;
 }
-/* .filter {
-  width: 0%;
-  margin: 4% auto;
-} */
+
 .ProductMain {
   margin-top: 5%;
   display: flex;

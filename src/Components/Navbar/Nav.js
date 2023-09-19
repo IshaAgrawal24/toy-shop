@@ -30,6 +30,7 @@ const Nav = () => {
       <div className="navContent" style={{ display: display.next }}>
         <Link to="/">Home</Link>
         <Link to="/shop">Shop</Link>
+        <Link to="/">Contact Us</Link>
       </div>
 
       {/* SearchBar  */}
@@ -54,11 +55,14 @@ const Nav = () => {
         <Link to="/login">
           <i className="fa-regular fa-user" title="user"></i>
         </Link>
-        <Link to="/wishlist">
-          <i className="fa-regular fa-heart" title="wishlist"></i>
-        </Link>
+
         <Link to="#" onClick={searchIcon}>
           <i className="fa-solid fa-magnifying-glass" title="search"></i>
+        </Link>
+        <Link to="/wishlist">
+          <i className="fa-regular fa-heart" title="wishlist" id="wishlist">
+            <span id="wishlist-numm">{number}</span>
+          </i>
         </Link>
         <Link to="/Cart">
           <i className="fa-solid fa-cart-shopping" id="cart" title="cart">

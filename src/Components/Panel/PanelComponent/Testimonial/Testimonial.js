@@ -26,12 +26,12 @@ const Testimonial = () => {
           </blockquote>
 
           <div className="carousel-icon">
-            <span id="left">
+            <button id="left">
               <ArrowLeft size={16} />
-            </span>
-            <span id="right">
+            </button>
+            <button id="right">
               <ArrowRight size={16} />
-            </span>
+            </button>
           </div>
         </div>
       </div>

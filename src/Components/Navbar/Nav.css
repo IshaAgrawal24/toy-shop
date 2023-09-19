@@ -8,7 +8,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 3% 2% 2%;
+  padding: 2%;
 }
 .nav a {
   text-decoration: none;
@@ -16,11 +16,18 @@
 
 /* LOGO  */
 .logo a {
+  border: 1px solid black;
   color: #878aff;
   font-weight: 900;
-  font-size: 2vw;
+  font-size: 23px;
   font-family: "Dancing Script", cursive;
   font-family: "DynaPuff", cursive;
+}
+
+.navContent {
+  flex: 0 0 100%;
+  max-width: 50%;
+  border: 1px solid black;
 }
 .navContent a {
   margin: 0 10%;
@@ -31,12 +38,14 @@
 
 /* SEARCH BAR  */
 .searchBar {
-  width: 50%;
+  flex: 0 0 100%;
+  max-width: 50%;
 }
 
 #search {
   margin-left: 10%;
-  width: 80%;
+  flex: 0 0 100%;
+  max-width: 100%;
   border: none;
   background: rgba(255, 255, 255, 0.5);
   background: none;
@@ -50,22 +59,19 @@
 
 /* CART  */
 .cart {
-  width: 20%;
-
-  margin-right: 3%;
+  border: 1px solid black;
+  width: 12%;
 }
 .cart a {
   border-radius: 5px;
   padding: 1.5%;
-
-  margin: 0 2%;
+  margin-left: 15px;
 }
 .cart i {
   color: black;
 }
 .cart #cart {
   color: black;
-
   position: relative;
 }
 
@@ -78,6 +84,7 @@
   color: white;
   bottom: -7px;
 }
+
 @media (max-width: 550px) {
   .cart {
     width: 30%;

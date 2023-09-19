@@ -52,13 +52,16 @@
 .testimonial-content blockquote p {
   margin-bottom: 10px;
 }
+
 .carousel-icon {
   float: right;
   width: 85px;
   margin-top: 10px;
 }
 
-.carousel-icon span {
+.carousel-icon button {
+  border: none;
+  cursor: pointer !important;
   background-color: #fff;
   margin-right: 10%;
   padding: 3px 6px;

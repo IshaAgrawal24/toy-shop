@@ -15,7 +15,9 @@ const Home = () => {
   return (
     <div className="home">
       <Nav />
-      <Header />
+      <div className="header">
+        <Header />
+      </div>
       <Category />
 
       {/* OFFERS  */}

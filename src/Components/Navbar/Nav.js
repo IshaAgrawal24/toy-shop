@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import CartContext from "../../Context";
 import "./Nav.css";
+import { Heart, Search, ShoppingCart, User } from "react-feather";
 
 const Nav = () => {
   const { number, setDisplay, display, inputs, setInputs, search } =
@@ -50,25 +51,29 @@ const Nav = () => {
         </form>
       </div>
 
-      {/* CART  */}
-      <div className="cart">
-        <Link to="/login">
-          <i className="fa-regular fa-user" title="user"></i>
-        </Link>
-
-        <Link to="#" onClick={searchIcon}>
-          <i className="fa-solid fa-magnifying-glass" title="search"></i>
-        </Link>
-        <Link to="/wishlist">
-          <i className="fa-regular fa-heart" title="wishlist" id="wishlist">
-            <span id="wishlist-numm">{number}</span>
-          </i>
-        </Link>
-        <Link to="/Cart">
-          <i className="fa-solid fa-cart-shopping" id="cart" title="cart">
-            <span id="num">{number}</span>
-          </i>
-        </Link>
+      {/* ICONS  */}
+      <div className="icons">
+        <div>
+          <Link to="/login">
+            <User size={20} color="black" />
+          </Link>
+        </div>
+        <div>
+          <Link to="#" onClick={searchIcon}>
+            <Search size={20} color="black" />
+          </Link>
+        </div>
+        <div>
+          <Link to="/wishlist">
+            <Heart size={20} color="black" id="wishlist" />
+          </Link>
+        </div>
+        <div className="shoppingCart">
+          <Link to="/Cart">
+            <ShoppingCart size={20} color="black" id="cart" />
+          </Link>
+        </div>
+        <span id="num">{number}</span>
       </div>
     </div>
   );

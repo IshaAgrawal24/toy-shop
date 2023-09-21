@@ -16,7 +16,6 @@
 
 /* LOGO  */
 .logo a {
-  border: 1px solid black;
   color: #878aff;
   font-weight: 900;
   font-size: 23px;
@@ -26,8 +25,7 @@
 
 .navContent {
   flex: 0 0 100%;
-  max-width: 50%;
-  border: 1px solid black;
+  max-width: 40%;
 }
 .navContent a {
   margin: 0 10%;
@@ -58,35 +56,32 @@
 }
 
 /* CART  */
-.cart {
-  border: 1px solid black;
-  width: 12%;
-}
-.cart a {
-  border-radius: 5px;
-  padding: 1.5%;
-  margin-left: 15px;
-}
-.cart i {
-  color: black;
-}
-.cart #cart {
-  color: black;
+.icons {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
   position: relative;
 }
+.icons a {
+  border-radius: 5px;
+  padding: 1.5%;
+  margin-right: 20px;
+}
 
-.cart i #num {
-  font-size: 10px;
-  padding: 20%;
-  background-color: #878aff;
-  border-radius: 50%;
+#num {
   position: absolute;
-  color: white;
-  bottom: -7px;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 700;
+  color: aliceblue;
+  padding: 1px 6px;
+  top: -9px;
+  right: 2px;
+  background-color: #9496da;
 }
 
 @media (max-width: 550px) {
-  .cart {
+  .icons {
     width: 30%;
     margin-right: 3%;
   }
@@ -95,7 +90,7 @@
   .searchBar {
     width: 50%;
   }
-  .cart {
+  .icons {
     margin-right: 5%;
   }
 }

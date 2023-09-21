@@ -4,6 +4,12 @@
   box-sizing: border-box;
 }
 
+.header {
+  height: 520px;
+  max-width: 100%;
+  margin-top: 0;
+}
+
 /* OFFERS  */
 .offers {
   margin: 60px auto 0;

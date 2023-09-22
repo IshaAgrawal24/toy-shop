@@ -60,8 +60,10 @@
 }
 
 .carousel-icon button {
+  border-radius: 5px;
+  box-shadow: 1px 2px 7px #5d5c5c;
   border: none;
-  cursor: pointer !important;
+  cursor: pointer;
   background-color: #fff;
   margin-right: 10%;
   padding: 3px 6px;

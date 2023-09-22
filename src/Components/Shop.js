@@ -91,7 +91,7 @@ const Shop = () => {
                   id={index}
                   onClick={singlPageOpen}
                 >
-                  <img src={item.image} alt="" />
+                  {item.image}
                 </div>
                 <h4>{item.name}</h4>
                 <div id="reviews">

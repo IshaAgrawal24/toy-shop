@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import CartContext from "../../../Context";
+import CartContext from "../../../../Context";
+import "./BestSeller.css";
 
 const BestSeller = () => {
   const { list } = useContext(CartContext);

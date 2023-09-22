@@ -1,6 +1,6 @@
 import { createContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import product from "./Components/Data";
+import { productList } from "./Assets/Products";
 const CartContext = createContext();
 
 export function CartProvider({ children }) {
@@ -9,8 +9,8 @@ export function CartProvider({ children }) {
     prev: "none",
     next: "block",
   });
-  const [list, setList] = useState(product["Products"]);
-  const [selectList, setSelectList] = useState(product["Products"]);
+  const [list, setList] = useState(productList);
+  const [selectList, setSelectList] = useState(productList);
   const [addCart, setAddCart] = useState([]);
   const [amount, setAmount] = useState(0);
   const [number, setNumber] = useState(0);

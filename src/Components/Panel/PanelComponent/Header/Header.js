@@ -15,7 +15,7 @@ const Header = () => {
     }
     timer.current = setTimeout(() => {
       nextSlide();
-    }, 8000);
+    }, 6000);
 
     return () => clearTimeout(timer.current);
   }, [timer.current]);

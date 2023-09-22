@@ -4,7 +4,6 @@ import { categoryList } from "../../../../Assets/CategoryData";
 import { Link } from "react-router-dom";
 
 const Category = () => {
-  console.log(categoryList);
   return (
     <div className="category-main">
       <h2>Categories</h2>

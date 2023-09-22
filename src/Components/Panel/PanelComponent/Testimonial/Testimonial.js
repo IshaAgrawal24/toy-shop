@@ -1,8 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Testimonial.css";
 import { ArrowLeft, ArrowRight } from "react-feather";
+import { testimonialList } from "../../../../Assets/TestimonialData";
 
 const Testimonial = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const previousSlide = () => {
+    console.log("dfff");
+    if (currentIndex === 0) {
+      setCurrentIndex(3);
+      return;
+    }
+    setCurrentIndex(currentIndex - 1);
+  };
+
+  const nextSlide = () => {
+    console.log("next");
+    if (currentIndex === 3) {
+      setCurrentIndex(0);
+      return;
+    }
+    setCurrentIndex(currentIndex + 1);
+  };
+
   return (
     <div className="testimonial">
       <h2>Testimonials</h2>
@@ -14,22 +35,23 @@ const Testimonial = () => {
           />
         </div>
         <div className="testimonial-content">
-          <blockquote>
-            <p>
-              "Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. It has
-              survived not only five centuries"
-            </p>
-            <cite>- Steve Jobs</cite>
-          </blockquote>
-
+          {testimonialList.map((item, index) => {
+            return (
+              <div key={index}>
+                {currentIndex === index ? (
+                  <blockquote>
+                    <p>{item.description}</p>
+                    <cite>- {item.name}</cite>
+                  </blockquote>
+                ) : null}
+              </div>
+            );
+          })}
           <div className="carousel-icon">
-            <button id="left">
+            <button onClick={() => previousSlide()}>
               <ArrowLeft size={16} />
             </button>
-            <button id="right">
+            <button id="right" onClick={() => nextSlide()}>
               <ArrowRight size={16} />
             </button>
           </div>

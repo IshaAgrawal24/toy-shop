@@ -19,19 +19,12 @@ const Home = () => {
         <Header />
       </div>
       <Category />
-
-      {/* OFFERS  */}
       <Offers />
-      {/* BEST SELLER  */}
       <BestSeller />
-
       <Advertisement />
-      {/* BENEFIT  */}
       <Benefit />
       <LookBook />
-      {/* TESTIMONIALS  */}
       <Testimonial />
-
       <Footer />
     </div>
   );

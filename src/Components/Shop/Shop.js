@@ -1,10 +1,10 @@
 import React, { useEffect, useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import "./Shop.css";
-import Nav from "./Navbar/Nav";
-import CartContext from "../Context";
-import Filter from "./Filter";
+import CartContext from "../../Context";
+import Filter from "../Filter";
 import { Modal } from "@mui/material";
+import Nav from "../Navbar/Nav";
 
 const Shop = () => {
   const [open, setOpen] = useState(false);
@@ -42,7 +42,6 @@ const Shop = () => {
       })
     );
   };
-  // console.log(wishlist);
 
   const addToCart = (event) => {
     let count = 0;
@@ -66,7 +65,6 @@ const Shop = () => {
       );
     }
   };
-  // console.log(addCart);
   setNumber(addCart.length);
 
   // SINGLE DETAIL PAGE OPEN
@@ -79,6 +77,10 @@ const Shop = () => {
     <>
       <div id="navFixed">
         <Nav />
+      </div>
+      <div className="breadcrumps">
+        <h1>Shop</h1>
+        <div className="breadcrumps-category"></div>
       </div>
       <div className="shopMain">
         <Filter />

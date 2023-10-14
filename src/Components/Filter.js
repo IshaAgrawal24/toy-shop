@@ -93,7 +93,6 @@ const Filter = () => {
     }
   };
   const selectPrice = (event) => {
-    // console.log(event.currentTarget.value);
     if (event.currentTarget.value == "low") {
       selectList.sort((a, b) => {
         return a.price - b.price;
@@ -108,7 +107,6 @@ const Filter = () => {
       // setPrice(event.currentTarget.value);
       setSelectList([...selectList]);
     }
-    // console.log("Select List");
   };
   return (
     <div className="filter">

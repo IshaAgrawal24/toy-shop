@@ -1,5 +1,5 @@
-import React, { useEffect, useState,useContext } from "react";
-import { Link,useNavigate } from "react-router-dom";
+import React, { useEffect, useState, useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import CartContext from "../Context";
 import "./Cart.css";
 import Nav from "./Navbar/Nav";
@@ -86,8 +86,6 @@ const Cart = () => {
     }
   };
   const remove = () => {
-    console.log("Remove ID");
-    console.log(typeof removeId);
     setAddCart(
       addCart.filter((item, index) => {
         return index != removeIndex;

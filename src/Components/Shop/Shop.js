@@ -2,9 +2,9 @@ import React, { useEffect, useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import "./Shop.css";
 import CartContext from "../../Context";
-import Filter from "../Filter";
 import { Modal } from "@mui/material";
 import Nav from "../Navbar/Nav";
+import Breadcrums from "./Breadcrums/Breadcrums";
 
 const Shop = () => {
   const [open, setOpen] = useState(false);
@@ -12,20 +12,13 @@ const Shop = () => {
   const { selectList, setSelectList, addCart, setAddCart, setNumber, list } =
     useContext(CartContext);
 
+  console.log(selectList);
   useEffect(() => {
     window.scrollTo({
       top: 0,
       left: 0,
       behavior: "smooth",
     });
-    // const headers = {
-    //   "Access-Control-Allow-Origin": *
-    // }
-    // fetch("http://localhost:7000/toys")
-    //   .then((res) => res.json())
-    //   .then((response) => {
-    //     console.log(response);
-    //   });
   }, []);
 
   const wishlistMethod = (event) => {
@@ -78,13 +71,24 @@ const Shop = () => {
       <div id="navFixed">
         <Nav />
       </div>
-      <div className="breadcrumps">
-        <h1>Shop</h1>
-        <div className="breadcrumps-category"></div>
-      </div>
-      <div className="shopMain">
-        <Filter />
-        <div className="ProductMain">
+      <Breadcrums />
+      <div className="shop-container">
+        <div className="shop__filter-container"></div>
+        <div className="shop__product-container">
+          {selectList.map((item, index) => {
+            const key = index + item.name;
+            return (
+              <div className="single-product" key={key}>
+                <div className="single-product__img">{item.image}</div>
+                <div className="single-product__content">
+                  <p>{item.name}</p>
+                  <p>{item.price}</p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+        {/* <div className="ProductMain">
           {selectList.map((item, index) => {
             return (
               <div className="singleProduct" key={index}>
@@ -143,7 +147,7 @@ const Shop = () => {
               </div>
             );
           })}
-        </div>
+        </div> */}
         <Modal open={open} onClose={() => setOpen(false)}>
           <div id="modal">
             {list.map((item, index) => {

@@ -7,7 +7,6 @@ const Testimonial = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const previousSlide = () => {
-    console.log("dfff");
     if (currentIndex === 0) {
       setCurrentIndex(3);
       return;
@@ -16,7 +15,6 @@ const Testimonial = () => {
   };
 
   const nextSlide = () => {
-    console.log("next");
     if (currentIndex === 3) {
       setCurrentIndex(0);
       return;

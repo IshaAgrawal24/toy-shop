@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.benefit {
+  margin: 60px auto 0;
+  display: flex;
+}
+
+.singleBenefit {
+  width: 29%;
+  text-align: center;
+  margin-left: 3%;
+  padding: 2%;
+}
+
+.benefit-icon {
+  display: inline-block;
+  text-align: center;
+  margin: 3% 4% 5% 0;
+  padding: 10px 15px;
+  border-radius: 52%;
+  background-color: #c2e3ff;
+  box-shadow: 1px 1px 4px #afb0f4;
+}
+
+.benefit-icon i {
+  font-size: 10px;
+  color: #323355;
+}
+
+.benefit-content h4 {
+  color: #323355;
+  font-family: "DynaPuff", cursive;
+  margin: 4% 0;
+}
+
+.benefit-content p {
+  color: #808080;
+  letter-spacing: 1.2px;
+  font-size: 14px;
+}
+
+@media (max-width: 1025px) {
+  .benefit-content h4 {
+    font-size: 14px;
+  }
+  .benefit-content p {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 580px) {
+  .benefit {
+    flex-direction: column;
+  }
+  .singleBenefit {
+    width: 90%;
+    text-align: center;
+    margin: auto;
+  }
+}

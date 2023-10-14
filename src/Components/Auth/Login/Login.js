@@ -40,7 +40,7 @@ const Login = () => {
   const homePage = () => {
     navigate("/");
   };
-  
+
   return (
     <div className="loginDiv">
       <div className="loginMain">
@@ -81,7 +81,7 @@ const Login = () => {
           <button onClick={login}>LOG IN</button>
 
           <div className="homeIcon">
-            <i class="fa-solid fa-house" onClick={homePage}></i>
+            <i className="fa-solid fa-house" onClick={homePage}></i>
           </div>
         </div>
       </div>

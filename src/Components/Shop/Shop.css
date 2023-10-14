@@ -1,0 +1,194 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#navFixed {
+  background-color: #fff;
+  box-shadow: 0px 0.2px 10px #666565;
+  position: fixed;
+  width: 100%;
+  margin: 0 auto;
+  top: 0;
+}
+
+.shop-container {
+  display: flex;
+  gap: 30px;
+}
+
+.shop__filter-container {
+  flex: 0 0 330px;
+  max-width: 330px;
+  border: 1px solid black;
+  height: 220px;
+}
+
+.shop__product-container {
+  max-width: calc(100% - 360px);
+  display: flex;
+  /* flex: 0 0 calc(100% - 360px); */
+  flex-wrap: wrap;
+  border: 1px solid red;
+}
+
+.shop__product-container .single-product {
+  margin: 0 20px 20px 0;
+  flex: 0 0 calc(33.33% - 20px);
+  border: 1px solid black;
+}
+
+.single-product .single-product__img {
+  height: 300px;
+  min-width: 100%;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+
+.single-product .single-product__img img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.shop-category-list div:hover {
+  border: none;
+}
+
+.single-category .category-img img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.single-category .category-img img:hover {
+  padding: 4px;
+  border: 2px solid #878aff;
+  cursor: pointer;
+}
+
+.shopMain {
+  margin: 12% 0;
+}
+
+.ProductMain {
+  margin-top: 5%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.singleProduct {
+  cursor: pointer;
+  border: 1px solid #eee;
+  padding: 2%;
+  border-radius: 7px;
+  flex: 0 0 22%;
+  margin: 4% 0 4% 2%;
+  text-align: center;
+  transition: all 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+
+.singleProduct:hover {
+  background-color: rgb(233, 233, 252);
+  border-radius: 7px;
+  padding: 2%;
+  transition: all 0.2s;
+}
+
+.singleProductImg {
+  width: 90%;
+  height: 200px;
+  margin: auto;
+}
+
+.singleProductImg img {
+  width: 100%;
+  height: 100%;
+}
+
+#reviews {
+  margin: 4% 0;
+  color: rgb(235, 206, 44);
+}
+
+.singlProductFlex {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin: auto;
+}
+
+.singlProductFlex i {
+  font-size: 20px;
+}
+
+#modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  background-color: #eee;
+  padding: 4%;
+  border-radius: 7px;
+}
+
+.modalChild {
+  display: flex;
+  align-items: center;
+}
+
+.modalImage {
+  width: 40%;
+  height: 200px;
+}
+
+.modalImage img {
+  width: 100%;
+  height: 100%;
+}
+
+.modalContent {
+  margin-left: 2%;
+}
+.modalContent h4 {
+  margin: 4% 0;
+}
+
+.modalContent p span {
+  color: gray;
+  margin-right: 3%;
+}
+
+#modal:focus {
+  outline: none;
+}
+
+.mainModal p {
+  margin: 2% 0;
+}
+
+.mainModal p span {
+  font-weight: 800;
+}
+
+@media (max-width: 670px) {
+  .singleProduct {
+    flex: 0 0 46%;
+    margin: 4% 0 4% 3%;
+  }
+}
+
+@media (max-width: 370px) {
+  .ProductMain {
+    flex-direction: column;
+    margin: auto;
+  }
+
+  .singleProduct {
+    flex: 0 0 44%;
+    margin: 4% 2% 4% 2%;
+    padding-bottom: 6%;
+  }
+}

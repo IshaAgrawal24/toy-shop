@@ -4,13 +4,10 @@
   box-sizing: border-box;
 }
 .placeOrder {
-  /* height: 60vh; */
   display: flex;
   flex-direction: column;
-
   align-items: center;
   margin: 12% 0;
-  /* justify-content: center; */
 }
 .placeOrder i {
   font-size: 25px;

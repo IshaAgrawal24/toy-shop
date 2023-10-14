@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.breadcrumps {
+  margin: 6% 0;
+  height: 400px;
+  width: 100%;
+  background: url("../../../Utils/Shop/bg-breadcrumb.jpg") no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.breadcrumps-category {
+  display: flex;
+  width: 60%;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.shop-category-list {
+  display: flex;
+  overflow: hidden;
+  flex-wrap: nowrap;
+}
+
+.single-category {
+  text-align: center;
+  overflow: hidden;
+  flex: 0 0 100%;
+  max-width: 14%;
+  margin: 0 22px;
+}
+
+.breadcrumps-arrow {
+  cursor: pointer;
+}
+
+.disabled-arrow {
+  cursor: not-allowed;
+}

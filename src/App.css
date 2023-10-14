@@ -1,6 +1,15 @@
 .App {
-  width: 85%;
-  margin:  auto;
+  max-width: 1440px;
+  width: 100%;
+  margin: auto;
   border-radius: 5px;
   border: 1px solid #eee;
+}
+
+.mt-30 {
+  margin-top: 30px;
+}
+
+.mb-30 {
+  margin-bottom: 30px;
 }

@@ -8,7 +8,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 3% 2% 2%;
+  padding: 2%;
 }
 .nav a {
   text-decoration: none;
@@ -18,9 +18,14 @@
 .logo a {
   color: #878aff;
   font-weight: 900;
-  font-size: 2vw;
+  font-size: 23px;
   font-family: "Dancing Script", cursive;
   font-family: "DynaPuff", cursive;
+}
+
+.navContent {
+  flex: 0 0 100%;
+  max-width: 40%;
 }
 .navContent a {
   margin: 0 10%;
@@ -31,12 +36,14 @@
 
 /* SEARCH BAR  */
 .searchBar {
-  width: 50%;
+  flex: 0 0 100%;
+  max-width: 50%;
 }
 
 #search {
   margin-left: 10%;
-  width: 80%;
+  flex: 0 0 100%;
+  max-width: 100%;
   border: none;
   background: rgba(255, 255, 255, 0.5);
   background: none;
@@ -49,39 +56,33 @@
 }
 
 /* CART  */
-.cart {
-  width: 20%;
-
-  margin-right: 3%;
-}
-.cart a {
-  border-radius: 5px;
-  padding: 1.5%;
-
-  margin: 0 2%;
-}
-.cart i {
-  color: black;
-}
-.cart #cart {
-  color: black;
-
+.icons {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
   position: relative;
 }
-
-.cart i #num {
-  font-size: 10px;
-  padding: 20%;
-  background-color: #878aff;
-  border-radius: 50%;
-  position: absolute;
-  color: white;
-  bottom: -7px;
+.icons a {
+  border-radius: 5px;
+  padding: 1.5%;
+  margin-right: 20px;
 }
-@media (max-width: 550px) {
-  .cart {
-    width: 30%;
 
+#num {
+  position: absolute;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 700;
+  color: aliceblue;
+  padding: 1px 6px;
+  top: -9px;
+  right: 2px;
+  background-color: #9496da;
+}
+
+@media (max-width: 550px) {
+  .icons {
+    width: 30%;
     margin-right: 3%;
   }
 }
@@ -89,7 +90,7 @@
   .searchBar {
     width: 50%;
   }
-  .cart {
+  .icons {
     margin-right: 5%;
   }
 }

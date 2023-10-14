@@ -1,26 +1,29 @@
 import React from "react";
 import "./Home.css";
-import Header from "./PanelComponent/Header";
 import Nav from "../Navbar/Nav";
-import Footer from "../Footer";
-import Benefit from "./PanelComponent/Benefit";
-import BestSeller from "./PanelComponent/BestSeller";
+import Benefit from "./PanelComponent/Benefit/Benefit";
 import Offers from "./PanelComponent/Offers";
-import Testimonial from "./PanelComponent/Testimonial";
+import Category from "./PanelComponent/Category/Category";
+import Advertisement from "./PanelComponent/Advertisement/Advertisement";
+import LookBook from "./PanelComponent/LookBook/LookBook";
+import Testimonial from "./PanelComponent/Testimonial/Testimonial";
+import Footer from "../Footer/Footer";
+import Header from "./PanelComponent/Header/Header";
+import BestSeller from "./PanelComponent/BestSeller/BestSeller";
 
 const Home = () => {
-  
   return (
     <div className="home">
       <Nav />
-      <Header />
-      {/* BENEFIT  */}
-      <Benefit />
-      {/* OFFERS  */}
+      <div className="header">
+        <Header />
+      </div>
+      <Category />
       <Offers />
-      {/* BEST SELLER  */}
       <BestSeller />
-      {/* TESTIMONIALS  */}
+      <Advertisement />
+      <Benefit />
+      <LookBook />
       <Testimonial />
       <Footer />
     </div>

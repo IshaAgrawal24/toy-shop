@@ -9,6 +9,7 @@ export const productList = [
       />
     ),
     price: 3599,
+    oldPrice: 4000,
     age: "2",
     ratings: 4,
     quantity: 1,
@@ -18,7 +19,7 @@ export const productList = [
   },
   {
     id: 2,
-    name: "Peppa Pig",
+    name: "Peppa Pig soft toy",
     image: (
       <img
         src={require("../Utils/ProductImages/toys/peppa-pig.png")}
@@ -26,6 +27,7 @@ export const productList = [
       />
     ),
     price: 839,
+    oldPrice: 900,
     ratings: 5,
     age: "5",
     quantity: 1,
@@ -43,6 +45,7 @@ export const productList = [
       />
     ),
     price: 1010,
+    oldPrice: 1200,
     ratings: 5,
     age: "2",
     quantity: 1,
@@ -60,6 +63,7 @@ export const productList = [
       />
     ),
     price: 278,
+    oldPrice: 300,
     age: "8",
     ratings: 5,
     quantity: 1,
@@ -77,6 +81,7 @@ export const productList = [
       />
     ),
     price: 341,
+    oldPrice: 400,
     age: "8",
     quantity: 1,
     ratings: 5,
@@ -94,6 +99,7 @@ export const productList = [
       />
     ),
     price: 851,
+    oldPrice: 900,
     age: "4",
     quantity: 1,
     ratings: 5,
@@ -111,6 +117,7 @@ export const productList = [
       />
     ),
     price: 303,
+    oldPrice: 350,
     age: "5",
     ratings: 5,
     quantity: 1,
@@ -128,6 +135,7 @@ export const productList = [
       />
     ),
     price: 2483,
+    oldPrice: 3000,
     age: "8",
     quantity: 1,
     ratings: 4,
@@ -145,6 +153,7 @@ export const productList = [
       />
     ),
     price: 699,
+    oldPrice: 799,
     age: "4",
     ratings: 5,
     quantity: 1,
@@ -162,6 +171,7 @@ export const productList = [
       />
     ),
     price: 599,
+    oldPrice: 699,
     age: "4",
     quantity: 1,
     ratings: 5,
@@ -179,6 +189,7 @@ export const productList = [
       />
     ),
     price: 596,
+    oldPrice: 700,
     age: "5",
     quantity: 1,
     ratings: 5,
@@ -213,6 +224,7 @@ export const productList = [
       />
     ),
     price: 2799,
+    oldPrice: 3000,
     age: "7",
     ratings: 5,
     quantity: 1,
@@ -230,6 +242,7 @@ export const productList = [
       />
     ),
     price: 1399,
+    oldPrice: 1499,
     age: "8",
     ratings: 5,
     quantity: 1,
@@ -247,6 +260,7 @@ export const productList = [
       />
     ),
     price: 1899,
+    oldPrice: 2000,
     age: "6",
     ratings: 5,
     quantity: 1,
@@ -264,6 +278,7 @@ export const productList = [
       />
     ),
     price: 1299,
+    oldPrice: 1500,
     age: "7",
     ratings: 5,
     quantity: 1,
@@ -281,6 +296,7 @@ export const productList = [
       />
     ),
     price: 2099,
+    oldPrice: 2200,
     age: "8",
     ratings: 5,
     quantity: 1,
@@ -298,6 +314,7 @@ export const productList = [
       />
     ),
     price: 1599,
+    oldPrice: 1800,
     age: "7",
     ratings: 5,
     quantity: 1,
@@ -315,6 +332,7 @@ export const productList = [
       />
     ),
     price: 2999,
+    oldPrice: 4000,
     age: "8",
     ratings: 5,
     quantity: 1,
@@ -332,6 +350,7 @@ export const productList = [
       />
     ),
     price: 1599,
+    oldPrice: 2000,
     age: "7",
     ratings: 5,
     quantity: 1,
@@ -349,7 +368,9 @@ export const productList = [
       />
     ),
     price: 2099,
+    oldPrice: 2200,
     age: "8",
+
     ratings: 5,
     quantity: 1,
     wishlist: 0,
@@ -366,6 +387,7 @@ export const productList = [
       />
     ),
     price: 2099,
+    oldPrice: 2200,
     age: "9",
     ratings: 5,
     quantity: 1,
@@ -383,7 +405,9 @@ export const productList = [
       />
     ),
     price: 1299,
+    oldPrice: 1400,
     age: "4",
+
     ratings: 4,
     quantity: 1,
     wishlist: 0,
@@ -399,7 +423,8 @@ export const productList = [
         alt="Denim bib set"
       />
     ),
-    price: 1299,
+    price: 1099,
+    oldPrice: 1300,
     age: "3",
     ratings: 3,
     quantity: 1,
@@ -417,6 +442,7 @@ export const productList = [
       />
     ),
     price: 999,
+    oldPrice: 1299,
     age: "5",
     ratings: 5,
     quantity: 1,
@@ -434,6 +460,7 @@ export const productList = [
       />
     ),
     price: 1199,
+    oldPrice: 1499,
     age: "3",
     ratings: 4,
     quantity: 1,
@@ -451,6 +478,7 @@ export const productList = [
       />
     ),
     price: 899,
+    oldPrice: 1299,
     age: "3",
     ratings: 5,
     quantity: 1,
@@ -468,6 +496,7 @@ export const productList = [
       />
     ),
     price: 999,
+    oldPrice: 1399,
     age: "4",
     ratings: 5,
     quantity: 1,
@@ -485,6 +514,7 @@ export const productList = [
       />
     ),
     price: 1199,
+    oldPrice: 1399,
     age: "4",
     ratings: 5,
     quantity: 1,
@@ -502,6 +532,7 @@ export const productList = [
       />
     ),
     price: 1199,
+    oldPrice: 1499,
     age: "5",
     ratings: 5,
     quantity: 1,
@@ -519,6 +550,7 @@ export const productList = [
       />
     ),
     price: 899,
+    oldPrice: 1199,
     age: "3",
     ratings: 5,
     quantity: 1,
@@ -536,6 +568,7 @@ export const productList = [
       />
     ),
     price: 999,
+    oldPrice: 1199,
     age: "1",
     ratings: 5,
     quantity: 1,
@@ -553,6 +586,7 @@ export const productList = [
       />
     ),
     price: 1399,
+    oldPrice: 1599,
     age: "1",
     ratings: 5,
     quantity: 1,
@@ -570,6 +604,7 @@ export const productList = [
       />
     ),
     price: 1199,
+    oldPrice: 1599,
     age: "1",
     ratings: 4,
     quantity: 1,
@@ -587,6 +622,7 @@ export const productList = [
       />
     ),
     price: 1099,
+    oldPrice: 1399,
     age: "1",
     ratings: 4,
     quantity: 1,
@@ -604,6 +640,7 @@ export const productList = [
       />
     ),
     price: 399,
+    oldPrice: 599,
     age: "1",
     ratings: 5,
     quantity: 1,
@@ -621,6 +658,7 @@ export const productList = [
       />
     ),
     price: 499,
+    oldPrice: 699,
     age: "1",
     ratings: 4,
     quantity: 1,
@@ -638,6 +676,7 @@ export const productList = [
       />
     ),
     price: 799,
+    oldPrice: 1099,
     age: "6",
     ratings: 5,
     quantity: 1,
@@ -655,6 +694,7 @@ export const productList = [
       />
     ),
     price: 2799,
+    oldPrice: 3099,
     age: "6",
     ratings: 5,
     quantity: 1,
@@ -672,6 +712,7 @@ export const productList = [
       />
     ),
     price: 799,
+    oldPrice: 999,
     age: "6",
     ratings: 5,
     quantity: 1,

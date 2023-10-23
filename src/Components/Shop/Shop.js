@@ -1,18 +1,17 @@
 import React, { useEffect, useState, useContext } from "react";
-import { Link } from "react-router-dom";
 import "./Shop.css";
 import CartContext from "../../Context";
-import { Modal } from "@mui/material";
 import Nav from "../Navbar/Nav";
 import Breadcrums from "./Breadcrums/Breadcrums";
+import { Star } from "react-feather";
+import QuickView from "./Quickview/QuickView";
 
 const Shop = () => {
-  const [open, setOpen] = useState(false);
-  const [singleIndex, setSingleIndex] = useState();
+  const [openQuickViewModal, setOpenQuickViewModal] = useState(false);
+  const [idQuickViewModal, setIdQuickViewModal] = useState();
   const { selectList, setSelectList, addCart, setAddCart, setNumber, list } =
     useContext(CartContext);
 
-  console.log(selectList);
   useEffect(() => {
     window.scrollTo({
       top: 0,
@@ -61,9 +60,10 @@ const Shop = () => {
   setNumber(addCart.length);
 
   // SINGLE DETAIL PAGE OPEN
-  const singlPageOpen = (event) => {
-    setOpen(true);
-    setSingleIndex(event.currentTarget.id);
+  const quickViewFunc = (id) => {
+    setOpenQuickViewModal(true);
+    setIdQuickViewModal(id);
+    console.log(id);
   };
 
   return (
@@ -73,16 +73,44 @@ const Shop = () => {
       </div>
       <Breadcrums />
       <div className="shop-container">
-        <div className="shop__filter-container"></div>
+        <div className="shop__category-container"></div>
         <div className="shop__product-container">
           {selectList.map((item, index) => {
             const key = index + item.name;
             return (
               <div className="single-product" key={key}>
-                <div className="single-product__img">{item.image}</div>
+                <div
+                  className="single-product__img"
+                  onClick={() => quickViewFunc(item.id)}
+                >
+                  {item.image}
+                </div>
                 <div className="single-product__content">
-                  <p>{item.name}</p>
-                  <p>{item.price}</p>
+                  <div id="price">&#8377;{item.price}.00</div>
+                  <a href="" id="title" onClick={() => quickViewFunc(item.id)}>
+                    {item.name}
+                  </a>
+                  <div id="ratings">
+                    {Array(item.ratings)
+                      .fill("")
+                      .map((star) => {
+                        return (
+                          <span>
+                            <Star color="#FFA41C" fill="#FFA41C" size={16} />
+                          </span>
+                        );
+                      })}
+                    {item.ratings < 5 &&
+                      Array(5 - item.ratings)
+                        .fill("")
+                        .map((star) => {
+                          return (
+                            <span>
+                              <Star color="#FFA41C" size={16} />
+                            </span>
+                          );
+                        })}
+                  </div>
                 </div>
               </div>
             );
@@ -148,42 +176,11 @@ const Shop = () => {
             );
           })}
         </div> */}
-        <Modal open={open} onClose={() => setOpen(false)}>
-          <div id="modal">
-            {list.map((item, index) => {
-              return index == singleIndex ? (
-                <div className="mainModal">
-                  <div className="modalChild">
-                    <div className="modalImage">
-                      <img src={item.image} alt="" />
-                    </div>
-                    <div className="modalContent">
-                      <h4>{item.name}</h4>
-                      <div id="reviews">
-                        <i className="fa-solid fa-star"></i>
-                        <i className="fa-solid fa-star"></i>
-                        <i className="fa-solid fa-star"></i>
-                        <i className="fa-solid fa-star-half"></i>
-                      </div>
-                      <p>
-                        <span>
-                          &#8377;<del>5399.00</del>
-                        </span>
-                        &#8377;{item.price}.00
-                      </p>
-                    </div>
-                  </div>
-                  <p>
-                    <span>Details: &nbsp;</span>Lorem Ipsum is simply dummy text
-                    of the printing and typesetting industry. Lorem Ipsum has
-                    been the industry's standard dummy text ever since the
-                    1500s.
-                  </p>
-                </div>
-              ) : null;
-            })}
-          </div>
-        </Modal>
+        <QuickView
+          idQuickViewModal={idQuickViewModal}
+          setOpenQuickViewModal={setOpenQuickViewModal}
+          openQuickViewModal={openQuickViewModal}
+        />
       </div>
     </>
   );

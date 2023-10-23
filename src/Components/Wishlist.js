@@ -1,4 +1,4 @@
-import React, { useState ,useContext} from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import "./Wishlist.css";
 import Nav from "./Navbar/Nav";
@@ -81,41 +81,40 @@ const Wishlist = () => {
         </div>
       </div>
       <Modal open={open} onClose={() => setOpen(false)}>
-          <div id="modal">
-            {selectList.map((item, index) => {
-              return index == singleIndex ? (
-                <div className="mainModal">
-                  <div className="modalChild">
-                    <div className="modalImage">
-                      <img src={item.image} alt="" />
-                    </div>
-                    <div className="modalContent">
-                      <h4>{item.name}</h4>
-                      <div id="reviews">
-                        <i className="fa-solid fa-star"></i>
-                        <i className="fa-solid fa-star"></i>
-                        <i className="fa-solid fa-star"></i>
-                        <i className="fa-solid fa-star-half"></i>
-                      </div>
-                      <p>
-                        <span>
-                          &#8377;<del>5399.00</del>
-                        </span>
-                        &#8377;{item.price}.00
-                      </p>
-                    </div>
+        <div id="modal">
+          {selectList.map((item, index) => {
+            return index == singleIndex ? (
+              <div className="mainModal">
+                <div className="modalChild">
+                  <div className="modalImage">
+                    <img src={item.image} alt="" />
                   </div>
-                  <p>
-                    <span>Details: &nbsp;</span>Lorem Ipsum is simply dummy text
-                    of the printing and typesetting industry. Lorem Ipsum has
-                    been the industry's standard dummy text ever since the
-                    1500s.
-                  </p>
+                  <div className="modalContent">
+                    <h4>{item.name}</h4>
+                    <div id="reviews">
+                      <i className="fa-solid fa-star"></i>
+                      <i className="fa-solid fa-star"></i>
+                      <i className="fa-solid fa-star"></i>
+                      <i className="fa-solid fa-star-half"></i>
+                    </div>
+                    <p>
+                      <span>
+                        &#8377;<del>5399.00</del>
+                      </span>
+                      &#8377;{item.price}.00
+                    </p>
+                  </div>
                 </div>
-              ) : null;
-            })}
-          </div>
-        </Modal>
+                <p>
+                  <span>Details: &nbsp;</span>Lorem Ipsum is simply dummy text
+                  of the printing and typesetting industry. Lorem Ipsum has been
+                  the industry's standard dummy text ever since the 1500s.
+                </p>
+              </div>
+            ) : null;
+          })}
+        </div>
+      </Modal>
     </>
   );
 };

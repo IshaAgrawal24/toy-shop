@@ -33,6 +33,7 @@
 }
 
 .modal-container__content {
+  margin-top: 10px;
   padding: 10px;
   overflow-y: scroll;
 }
@@ -80,20 +81,87 @@ hr {
   display: grid;
   grid-template-columns: 1.5fr 3fr 1fr;
   gap: 10px;
+  margin-top: 28px;
 }
 
-.modal-container__options .quantity {
+.modal-container__options .quantity,
+.wishlist,
+.cart {
+  height: 100%;
   border: 1px solid #9b9b9b;
-  border-radius: 7px;
-}
-
-.modal-container__options .quantity button {
-  margin: 0 3px;
-  border: none;
+  border-radius: 5px;
+  margin: 0;
+  cursor: pointer;
   background-color: transparent;
-  padding: 2px 5px;
 }
 
-.modal-container__options .quantity span {
-  margin: 2px 13px;
+.modal-container__options .quantity,
+.wishlist {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 7px 5px;
+}
+
+.modal-container__options .quantity div {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.modal-container__options .cart {
+  width: 100%;
+  border: 1px solid #000;
+}
+
+.modal-container__options .wishlist {
+  justify-content: center;
+}
+
+.buy-now {
+  margin-top: 12px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #000;
+  color: #fff;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+}
+
+.modal-container__options .quantity-icon:hover {
+  color: #445eb4;
+}
+
+.modal-container__options .wishlist:hover,
+.modal-container__options .cart:hover,
+.buy-now:hover {
+  background-color: #445eb4;
+  color: #fff;
+}
+
+.content__features {
+  margin-top: 28px;
+}
+
+.content__features .worldwide,
+.delievery {
+  display: flex;
+  align-items: center;
+  margin: 8px 0;
+}
+
+.content__features .worldwide p,
+.delievery p {
+  margin-left: 8px;
+  font-size: 12px;
+  color: #4b4848;
+  letter-spacing: 0.5px;
+}
+
+.modal-container__cross {
+  position: absolute;
+  right: 25px;
+  cursor: pointer;
+  top: 3px;
 }

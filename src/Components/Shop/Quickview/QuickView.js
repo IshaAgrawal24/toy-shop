@@ -2,23 +2,33 @@ import React, { useContext } from "react";
 import "./QuickView.css";
 import CartContext from "../../../Context";
 import { Modal } from "@mui/material";
-import { Globe, Heart, Star, Truck } from "react-feather";
+import { Globe, Heart, Minus, Plus, Star, Truck } from "react-feather";
 
 const QuickView = (_props) => {
-  const { idQuickViewModal, setOpenQuickViewModal, openQuickViewModal } =
-    _props;
+  const {
+    idQuickViewModal,
+    setOpenQuickViewModal,
+    openQuickViewModal,
+    wishlistMethod,
+  } = _props;
   const { selectList } = useContext(CartContext);
 
   return (
     <Modal
       open={openQuickViewModal}
-      onClose={() => setOpenQuickViewModal(false)}
+      onClose={() => setOpenQuickViewModal(!openQuickViewModal)}
     >
       <div id="quick-view">
         {selectList.map((item, index) => {
           const key = item.name + index;
           return item.id === idQuickViewModal ? (
             <div className="modal-container" key={key}>
+              <div
+                className="modal-container__cross"
+                onClick={() => setOpenQuickViewModal(!openQuickViewModal)}
+              >
+                x
+              </div>
               <div className="modal-child">
                 <div className="modal-container__image">{item.image}</div>
                 <div className="modal-container__content">
@@ -62,28 +72,40 @@ const QuickView = (_props) => {
                   </p>
                   <div className="modal-container__options">
                     <div className="quantity">
-                      <button>-</button>
-                      <span>1</span>
-                      <button>+</button>
+                      <Minus size={16} className="quantity-icon" />
+                      <div>1</div>
+                      <Plus size={16} className="quantity-icon" />
                     </div>
-                    <div className="cart">
-                      <button>Add to Cart</button>
-                    </div>
+
+                    <button className="cart">Add to Cart</button>
+
                     <button className="wishlist">
-                      <Heart size={16} />
+                      {item.wishlist == 1 ? (
+                        <Heart
+                          size={16}
+                          fill="#1e2d5f"
+                          onClick={() => wishlistMethod(item.id)}
+                        />
+                      ) : (
+                        <Heart
+                          size={16}
+                          onClick={() => wishlistMethod(item.id)}
+                        />
+                      )}
                     </button>
                   </div>
                   <button className="buy-now">Buy Now</button>
                   <div className="content__features">
                     <div className="worldwide">
-                      <Globe />
+                      <Globe color="#b7b7b7" strokeWidth="1.2px" size="18px" />
                       <p>
                         Free worldwide shipping on all orders over
                         &#8377;1000.00
                       </p>
                     </div>
                     <div className="delievery">
-                      <Truck /> <p>Delievers in: 3-7 working days</p>
+                      <Truck color="#b7b7b7" strokeWidth="1.2px" size="18px" />{" "}
+                      <p>Delievers in: 3-7 working days</p>
                     </div>
                   </div>
                 </div>

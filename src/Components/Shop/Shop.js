@@ -3,8 +3,9 @@ import "./Shop.css";
 import CartContext from "../../Context";
 import Nav from "../Navbar/Nav";
 import Breadcrums from "./Breadcrums/Breadcrums";
-import { Star } from "react-feather";
+import { Eye, Heart, ShoppingBag, Star } from "react-feather";
 import QuickView from "./Quickview/QuickView";
+import { Tooltip } from "@mui/material";
 
 const Shop = () => {
   const [openQuickViewModal, setOpenQuickViewModal] = useState(false);
@@ -20,10 +21,10 @@ const Shop = () => {
     });
   }, []);
 
-  const wishlistMethod = (event) => {
+  const wishlistMethod = (id) => {
     setSelectList(
-      selectList.map((item, index) => {
-        if (index == event.currentTarget.id) {
+      selectList.map((item) => {
+        if (item.id == id) {
           if (item.wishlist == 0) {
             item.wishlist = 1;
           } else {
@@ -35,20 +36,22 @@ const Shop = () => {
     );
   };
 
-  const addToCart = (event) => {
+  const addToCart = (id) => {
+    console.log("id: ", id, "addcart: ", addCart);
+
     let count = 0;
     setAddCart(
-      addCart.map((item) => {
-        if (event.currentTarget.className == item.id) {
+      addCart.forEach((item) => {
+        if (id - 1 == item.id) {
           count = count + 1;
         }
       })
     );
     if (count === 0) {
-      setAddCart([...addCart, { ...selectList[event.currentTarget.id] }]);
+      setAddCart([...addCart, { ...selectList[id - 1] }]);
       setSelectList(
         selectList.filter((item) => {
-          if (event.currentTarget.className == item.id) {
+          if (id == item.id) {
             item.add = 1;
             return item;
           }
@@ -63,7 +66,6 @@ const Shop = () => {
   const quickViewFunc = (id) => {
     setOpenQuickViewModal(true);
     setIdQuickViewModal(id);
-    console.log(id);
   };
 
   return (
@@ -79,11 +81,46 @@ const Shop = () => {
             const key = index + item.name;
             return (
               <div className="single-product" key={key}>
-                <div
-                  className="single-product__img"
-                  onClick={() => quickViewFunc(item.id)}
-                >
+                <div className="single-product__img">
                   {item.image}
+                  <div className="product__icon">
+                    <div className="tooltip-icons">
+                      <Tooltip title="Add to cart" placement="top">
+                        <ShoppingBag
+                          size={18}
+                          strokeWidth="1.2px"
+                          onClick={() => addToCart(item.id)}
+                        />
+                      </Tooltip>
+                    </div>
+                    <div className="tooltip-icons">
+                      <Tooltip title="wishlist" placement="top">
+                        {item.wishlist == 1 ? (
+                          <Heart
+                            size={18}
+                            fill="#1e2d5f"
+                            strokeWidth="1.2px"
+                            onClick={() => wishlistMethod(item.id)}
+                          />
+                        ) : (
+                          <Heart
+                            size={18}
+                            strokeWidth="1.2px"
+                            onClick={() => wishlistMethod(item.id)}
+                          />
+                        )}
+                      </Tooltip>
+                    </div>
+                    <div className="tooltip-icons">
+                      <Tooltip title="quick view" placement="top">
+                        <Eye
+                          size={18}
+                          onClick={() => quickViewFunc(item.id)}
+                          strokeWidth="1.2px"
+                        />
+                      </Tooltip>
+                    </div>
+                  </div>
                 </div>
                 <div className="single-product__content">
                   <div id="price">&#8377;{item.price}.00</div>
@@ -93,9 +130,9 @@ const Shop = () => {
                   <div id="ratings">
                     {Array(item.ratings)
                       .fill("")
-                      .map((star) => {
+                      .map((_, index) => {
                         return (
-                          <span>
+                          <span key={index}>
                             <Star color="#FFA41C" fill="#FFA41C" size={16} />
                           </span>
                         );
@@ -103,9 +140,9 @@ const Shop = () => {
                     {item.ratings < 5 &&
                       Array(5 - item.ratings)
                         .fill("")
-                        .map((star) => {
+                        .map((_, index) => {
                           return (
-                            <span>
+                            <span key={index}>
                               <Star color="#FFA41C" size={16} />
                             </span>
                           );
@@ -180,6 +217,7 @@ const Shop = () => {
           idQuickViewModal={idQuickViewModal}
           setOpenQuickViewModal={setOpenQuickViewModal}
           openQuickViewModal={openQuickViewModal}
+          wishlistMethod={wishlistMethod}
         />
       </div>
     </>

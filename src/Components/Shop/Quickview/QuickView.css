@@ -85,8 +85,8 @@ hr {
 }
 
 .modal-container__options .quantity,
-.wishlist,
-.cart {
+.modal-container__options .wishlist,
+.modal-container__options .cart {
   height: 100%;
   border: 1px solid #9b9b9b;
   border-radius: 5px;
@@ -96,7 +96,7 @@ hr {
 }
 
 .modal-container__options .quantity,
-.wishlist {
+.modal-container__options .wishlist {
   display: flex;
   align-items: center;
   justify-content: space-between;

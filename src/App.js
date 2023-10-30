@@ -4,7 +4,7 @@ import { CartProvider } from "./Context";
 import Cart from "./Components/Cart";
 import Checkout from "./Components/Checkout";
 import Placeorder from "./Components/Placeorder";
-import Wishlist from "./Components/Wishlist";
+import Wishlist from "./Components/Wishlist/Wishlist";
 import Login from "./Components/Auth/Login/Login";
 import Signup from "./Components/Auth/Signup/Signup";
 import Home from "./Components/Panel/Home";

@@ -79,18 +79,14 @@ const QuickView = (_props) => {
 
                     <button className="cart">Add to Cart</button>
 
-                    <button className="wishlist">
+                    <button
+                      className="wishlist"
+                      onClick={() => wishlistMethod(item.id)}
+                    >
                       {item.wishlist == 1 ? (
-                        <Heart
-                          size={16}
-                          fill="#1e2d5f"
-                          onClick={() => wishlistMethod(item.id)}
-                        />
+                        <Heart size={16} fill="#1e2d5f" />
                       ) : (
-                        <Heart
-                          size={16}
-                          onClick={() => wishlistMethod(item.id)}
-                        />
+                        <Heart size={16} />
                       )}
                     </button>
                   </div>

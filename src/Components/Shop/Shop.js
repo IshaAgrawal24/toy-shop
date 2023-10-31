@@ -6,6 +6,7 @@ import Breadcrums from "./Breadcrums/Breadcrums";
 import { Eye, Heart, ShoppingBag, Star } from "react-feather";
 import QuickView from "./Quickview/QuickView";
 import { Tooltip } from "@mui/material";
+import Footer from "../Footer/Footer";
 
 const Shop = () => {
   const [openQuickViewModal, setOpenQuickViewModal] = useState(false);
@@ -220,6 +221,7 @@ const Shop = () => {
           wishlistMethod={wishlistMethod}
         />
       </div>
+      <Footer />
     </>
   );
 };

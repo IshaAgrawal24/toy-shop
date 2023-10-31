@@ -6,6 +6,7 @@ import CartContext from "../../Context";
 import { Modal } from "@mui/material";
 import { Star } from "react-feather";
 import QuickView from "../Shop/Quickview/QuickView";
+import Footer from "../Footer/Footer";
 
 const Wishlist = () => {
   const [openQuickViewModal, setOpenQuickViewModal] = useState(false);
@@ -70,7 +71,7 @@ const Wishlist = () => {
         <Nav />
       </div>
       <div className="wishlist">
-        <div className="wishlist__breadcrumb">
+        <div className="head__breadcrumb">
           <h1>Wishlist</h1>
         </div>
         <div className="wishlistMain">
@@ -133,6 +134,7 @@ const Wishlist = () => {
           wishlistMethod={removeFromWishlist}
         />
       </div>
+      <Footer />
     </>
   );
 };

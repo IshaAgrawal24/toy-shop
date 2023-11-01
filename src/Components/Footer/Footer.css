@@ -134,12 +134,12 @@
 
   .newsletter {
     order: -1;
-    width: 90%;
+    width: 95%;
     margin: 0 auto 30px;
   }
 
   .newsletter .newsletter__email input {
-    width: 60%;
+    width: 80%;
   }
 
   .footer-connect {

@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.contact__container {
+  margin: 80px 30px;
+  display: grid;
+  grid-template-columns: 60% auto;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.contact__container-form,
+.contact__container-info {
+  padding: 2%;
+}
+
+.contact__container-form h3,
+.contact__container-info h3 {
+  width: 95%;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed black;
+  letter-spacing: 0.7px;
+}
+
+.contact__form,
+.contact__container__boxes {
+  padding: 15px 0;
+}
+
+.form__input-box input {
+  outline: none;
+  width: 45%;
+  margin-right: 5%;
+  padding: 8px;
+  font-family: "Baloo Bhai 2", sans-serif;
+  font-family: "Montserrat Alternates", sans-serif;
+  border: 1px solid rgb(79, 78, 78);
+  border-radius: 2px;
+}
+
+.contact__form textarea {
+  outline: none;
+  margin-top: 2%;
+  width: 95%;
+  padding: 8px;
+  font-family: "Baloo Bhai 2", sans-serif;
+  font-family: "Montserrat Alternates", sans-serif;
+  border: 1px solid rgb(79, 78, 78);
+  border-radius: 2px;
+}
+
+.contact__btn button {
+  margin-top: 2%;
+  padding: 1.5% 5%;
+  border-radius: 20px;
+  border: 1.5px dashed #8289ff;
+  background-color: transparent;
+  letter-spacing: 1px;
+}
+
+.contact__btn button:hover {
+  background-color: #8289ff;
+  color: aliceblue;
+  font-weight: 700;
+}
+
+.contact__boxes-flex {
+  margin: 1% 0 4%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background-color: #e2e9ff;
+  padding: 3%;
+  font-family: "Baloo Bhai 2", sans-serif;
+  font-family: "Montserrat Alternates", sans-serif;
+  color: rgb(69, 70, 70);
+}
+
+.contact__boxes-info h4 {
+  margin-bottom: 7px;
+}
+
+.contact__boxes-info p {
+  font-size: 13px;
+}
+
+@media (max-width: 768px) {
+  .contact__container {
+    grid-template-columns: auto;
+  }
+}

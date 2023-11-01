@@ -1,0 +1,95 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.testimonial {
+  margin: 60px 3%;
+  border-radius: 7px;
+  position: relative;
+  text-align: center;
+}
+
+.testimonial h2 {
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
+.testimonial-container {
+  margin: 3% 0;
+}
+
+.testimonial-content {
+  display: flex;
+  flex-direction: column;
+  width: 65%;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  /* animation-name: carousel-img-animation;
+  animation-delay: 5s;
+  animation-duration: 2s;
+  animation-iteration-count: initial;
+  animation-timing-function: ease-in-out; */
+}
+
+.testimonial-img {
+  margin-bottom: 30px;
+}
+
+.testimonial-img img {
+  padding: 5px;
+  border: 1px dashed #0e0f46;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+}
+
+.testimonial-content blockquote p {
+  margin-bottom: 10px;
+  font-family: "Baloo Bhai 2", sans-serif;
+  font-family: "Montserrat Alternates", sans-serif;
+  letter-spacing: 1px;
+  line-height: 25px;
+}
+
+.carousel-icon {
+  float: right;
+  width: 85px;
+  margin-top: 10px;
+}
+
+.carousel-icon button {
+  border-radius: 5px;
+  box-shadow: 1px 2px 7px #5d5c5c;
+  border: none;
+  cursor: pointer;
+  background-color: #dcddf2;
+  color: #575252;
+  margin-right: 10%;
+  padding: 3px 6px;
+}
+
+.testimonial__caraousel-btn-color {
+  background-color: #e2e9ff;
+  color: #575252;
+}
+
+/* @keyframes carousel-img-animation {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(100%);
+  }
+  50% {
+    transform: translateX(200%);
+  }
+  75% {
+    transform: translateX(300%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+} */

@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./About.css";
 import Nav from "../Navbar/Nav";
 import Footer from "../Footer/Footer";
+import Testimonial from "./Testimonial/Testimonial";
 
 const About = () => {
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  }, []);
   return (
     <div className="about">
       <div id="navFixed">
@@ -35,40 +43,42 @@ const About = () => {
         </div>
 
         <div className="about__features">
-          <h2>Notes when buying newborn</h2>
-          <h2>baby clothes!</h2>
+          <div className="about__features-head">
+            <h2>Notes when buying newborn</h2>
+            <h2>baby clothes!</h2>
+          </div>
           <div className="about__features-icons">
             <div className="single-icon">
               <i
-                class="fa-solid fa-thumbs-up"
+                className="fa-solid fa-thumbs-up"
                 style={{
-                  color: "#4176d2",
+                  color: "#878aff",
                   fontSize: "26px",
                 }}
               ></i>
-              <h4>About the material</h4>
+              <h3>About the material</h3>
               <p>Choose clothes made of cotton</p>
             </div>
             <div className="single-icon">
               <i
-                class="fa-solid fa-bag-shopping"
+                className="fa-solid fa-bag-shopping"
                 style={{
-                  color: "#4176d2",
+                  color: "#878aff",
                   fontSize: "26px",
                 }}
               ></i>
-              <h4>About the brand</h4>
+              <h3>About the brand</h3>
               <p>Choose reputable and famous brands</p>
             </div>
             <div className="single-icon">
               <i
-                class="fa-solid fa-palette"
+                className="fa-solid fa-palette"
                 style={{
-                  color: "#4176d2",
+                  color: "#878aff",
                   fontSize: "26px",
                 }}
               ></i>
-              <h4>About the color</h4>
+              <h3>About the color</h3>
               <p>Should choose light and netural colors</p>
             </div>
           </div>
@@ -90,6 +100,7 @@ const About = () => {
           </div>
         </div>
       </div>
+      <Testimonial />
       <Footer />
     </div>
   );

@@ -31,7 +31,7 @@ const Nav = () => {
       <div className="navContent" style={{ display: display.next }}>
         <Link to="/">Home</Link>
         <Link to="/shop">Shop</Link>
-        {/* <Link to="/">Contact Us</Link> */}
+        <Link to="/contact">Contact Us</Link>
         <Link to="/about">About us</Link>
       </div>
 

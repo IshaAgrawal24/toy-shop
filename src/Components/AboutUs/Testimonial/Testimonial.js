@@ -1,7 +1,12 @@
 import React, { useState } from "react";
 import "./Testimonial.css";
-import { ArrowLeft, ArrowRight } from "react-feather";
-import { testimonialList } from "../../../../Assets/TestimonialData";
+import {
+  ArrowLeft,
+  ArrowRight,
+  ChevronLeft,
+  ChevronRight,
+} from "react-feather";
+import { testimonialList } from "../../../Assets/TestimonialData";
 
 const Testimonial = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -24,35 +29,36 @@ const Testimonial = () => {
 
   return (
     <div className="testimonial">
-      <h2>Testimonials</h2>
+      <h2>Our Testimonials</h2>
       <div className="testimonial-container">
-        <div className="testimonial-img">
-          <img
-            src={require("../../../../Utils/HomeTestimonial/babyImage.avif")}
-            alt=""
-          />
+        <div
+          className="leftArrow carousel-arrow testimonial__caraousel-btn-color"
+          onClick={() => previousSlide()}
+        >
+          <ChevronLeft />
+        </div>
+        <div
+          className="rightArrow carousel-arrow testimonial__caraousel-btn-color"
+          onClick={() => nextSlide()}
+        >
+          <ChevronRight />
         </div>
         <div className="testimonial-content">
           {testimonialList.map((item, index) => {
             return (
               <div key={index}>
                 {currentIndex === index ? (
-                  <blockquote>
-                    <p>{item.description}</p>
-                    <cite>- {item.name}</cite>
-                  </blockquote>
+                  <>
+                    <div className="testimonial-img">{item.image}</div>
+                    <blockquote>
+                      <p>{item.description}</p>
+                      <cite>- {item.name}</cite>
+                    </blockquote>
+                  </>
                 ) : null}
               </div>
             );
           })}
-          <div className="carousel-icon">
-            <button onClick={() => previousSlide()}>
-              <ArrowLeft size={16} />
-            </button>
-            <button id="right" onClick={() => nextSlide()}>
-              <ArrowRight size={16} />
-            </button>
-          </div>
         </div>
       </div>
     </div>

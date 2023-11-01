@@ -58,16 +58,16 @@ const Footer = () => {
           <h3>Extras</h3>
           <ul>
             <li>
-              <a href="/">About us</a>
+              <a href="/about">About us</a>
             </li>
             <li>
-              <a href="/">Blogs</a>
+              <a href="/contact">Contact</a>
             </li>
             <li>
-              <a href="/">Wishlist</a>
+              <a href="/wishlist">Wishlist</a>
             </li>
             <li>
-              <a href="/">All Collections</a>
+              <a href="/shop">All Collections</a>
             </li>
           </ul>
         </div>

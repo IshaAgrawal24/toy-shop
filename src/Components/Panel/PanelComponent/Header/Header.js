@@ -44,12 +44,15 @@ const Header = () => {
     <div className="header-main">
       <div className="header-container">
         <div
-          className="leftArrow carousel-arrow"
+          className="leftArrow carousel-arrow header__caraousel-btn-color"
           onClick={() => previousSlide()}
         >
           <ChevronLeft />
         </div>
-        <div className="rightArrow carousel-arrow" onClick={() => nextSlide()}>
+        <div
+          className="rightArrow carousel-arrow header__caraousel-btn-color"
+          onClick={() => nextSlide()}
+        >
           <ChevronRight />
         </div>
         {caraouselList.map((item, index) => {

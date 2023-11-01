@@ -10,6 +10,7 @@ import Signup from "./Components/Auth/Signup/Signup";
 import Home from "./Components/Panel/Home";
 import Shop from "./Components/Shop/Shop";
 import About from "./Components/AboutUs/About";
+import Contact from "./Components/Contact/Contact";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/shop" element={<Shop />} />
           <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/wishlist" element={<Wishlist />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />

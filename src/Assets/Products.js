@@ -15,7 +15,7 @@ export const productList = [
     quantity: 1,
     wishlist: 0,
     add: 0,
-    category: "toys",
+    category: "Toys",
   },
   {
     id: 2,
@@ -33,7 +33,7 @@ export const productList = [
     quantity: 1,
     wishlist: 0,
     add: 0,
-    category: "toys",
+    category: "Toys",
   },
   {
     id: 3,
@@ -51,7 +51,7 @@ export const productList = [
     quantity: 1,
     wishlist: 0,
     add: 0,
-    category: "toys",
+    category: "Toys",
   },
   {
     id: 4,
@@ -69,7 +69,7 @@ export const productList = [
     quantity: 1,
     wishlist: 0,
     add: 0,
-    category: "toys",
+    category: "Toys",
   },
   {
     id: 5,
@@ -87,7 +87,7 @@ export const productList = [
     ratings: 5,
     wishlist: 0,
     add: 0,
-    category: "toys",
+    category: "Toys",
   },
   {
     id: 6,
@@ -105,7 +105,7 @@ export const productList = [
     ratings: 5,
     wishlist: 0,
     add: 0,
-    category: "toys",
+    category: "Toys",
   },
   {
     id: 7,
@@ -123,7 +123,7 @@ export const productList = [
     quantity: 1,
     wishlist: 0,
     add: 0,
-    category: "toys",
+    category: "Toys",
   },
   {
     id: 8,
@@ -141,7 +141,7 @@ export const productList = [
     ratings: 4,
     wishlist: 0,
     add: 0,
-    category: "toys",
+    category: "Toys",
   },
   {
     id: 9,
@@ -159,7 +159,7 @@ export const productList = [
     quantity: 1,
     wishlist: 0,
     add: 0,
-    category: "toys",
+    category: "Toys",
   },
   {
     id: 10,
@@ -177,7 +177,7 @@ export const productList = [
     ratings: 5,
     wishlist: 0,
     add: 0,
-    category: "toys",
+    category: "Toys",
   },
   {
     id: 11,
@@ -195,7 +195,7 @@ export const productList = [
     ratings: 5,
     wishlist: 0,
     add: 0,
-    category: "toys",
+    category: "Toys",
   },
   {
     id: 12,
@@ -212,7 +212,7 @@ export const productList = [
     quantity: 1,
     wishlist: 0,
     add: 0,
-    category: "toys",
+    category: "Toys",
   },
   {
     id: 13,
@@ -230,7 +230,7 @@ export const productList = [
     quantity: 1,
     wishlist: 0,
     add: 0,
-    category: "boy",
+    category: "Boy",
   },
   {
     id: 14,
@@ -248,7 +248,7 @@ export const productList = [
     quantity: 1,
     wishlist: 0,
     add: 0,
-    category: "boy",
+    category: "Boy",
   },
   {
     id: 15,
@@ -266,7 +266,7 @@ export const productList = [
     quantity: 1,
     wishlist: 0,
     add: 0,
-    category: "boy",
+    category: "Boy",
   },
   {
     id: 16,
@@ -284,7 +284,7 @@ export const productList = [
     quantity: 1,
     wishlist: 0,
     add: 0,
-    category: "boy",
+    category: "Boy",
   },
   {
     id: 17,
@@ -302,7 +302,7 @@ export const productList = [
     quantity: 1,
     wishlist: 0,
     add: 0,
-    category: "girl",
+    category: "Girl",
   },
   {
     id: 18,
@@ -320,7 +320,7 @@ export const productList = [
     quantity: 1,
     wishlist: 0,
     add: 0,
-    category: "girl",
+    category: "Girl",
   },
   {
     id: 19,
@@ -338,7 +338,7 @@ export const productList = [
     quantity: 1,
     wishlist: 0,
     add: 0,
-    category: "girl",
+    category: "Girl",
   },
   {
     id: 20,
@@ -356,7 +356,7 @@ export const productList = [
     quantity: 1,
     wishlist: 0,
     add: 0,
-    category: "girl",
+    category: "Girl",
   },
   {
     id: 21,
@@ -375,7 +375,7 @@ export const productList = [
     quantity: 1,
     wishlist: 0,
     add: 0,
-    category: "girl",
+    category: "Girl",
   },
   {
     id: 22,
@@ -393,7 +393,7 @@ export const productList = [
     quantity: 1,
     wishlist: 0,
     add: 0,
-    category: "girl",
+    category: "Girl",
   },
   {
     id: 23,
@@ -412,7 +412,7 @@ export const productList = [
     quantity: 1,
     wishlist: 0,
     add: 0,
-    category: "baby-boy",
+    category: "Baby boy",
   },
   {
     id: 24,
@@ -430,7 +430,7 @@ export const productList = [
     quantity: 1,
     wishlist: 0,
     add: 0,
-    category: "baby-boy",
+    category: "Baby boy",
   },
   {
     id: 25,
@@ -448,7 +448,7 @@ export const productList = [
     quantity: 1,
     wishlist: 0,
     add: 0,
-    category: "baby-boy",
+    category: "Baby boy",
   },
   {
     id: 26,
@@ -466,7 +466,7 @@ export const productList = [
     quantity: 1,
     wishlist: 0,
     add: 0,
-    category: "baby-boy",
+    category: "Baby boy",
   },
   {
     id: 27,
@@ -484,7 +484,7 @@ export const productList = [
     quantity: 1,
     wishlist: 0,
     add: 0,
-    category: "baby-girl",
+    category: "Baby girl",
   },
   {
     id: 28,
@@ -502,7 +502,7 @@ export const productList = [
     quantity: 1,
     wishlist: 0,
     add: 0,
-    category: "baby-girl",
+    category: "Baby girl",
   },
   {
     id: 29,
@@ -520,7 +520,7 @@ export const productList = [
     quantity: 1,
     wishlist: 0,
     add: 0,
-    category: "baby-girl",
+    category: "Baby girl",
   },
   {
     id: 30,
@@ -538,7 +538,7 @@ export const productList = [
     quantity: 1,
     wishlist: 0,
     add: 0,
-    category: "baby-girl",
+    category: "Baby girl",
   },
   {
     id: 31,
@@ -556,7 +556,7 @@ export const productList = [
     quantity: 1,
     wishlist: 0,
     add: 0,
-    category: "baby-girl",
+    category: "Baby girl",
   },
   {
     id: 32,
@@ -574,7 +574,7 @@ export const productList = [
     quantity: 1,
     wishlist: 0,
     add: 0,
-    category: "toddler-boy",
+    category: "Toddler boy",
   },
   {
     id: 33,
@@ -592,7 +592,7 @@ export const productList = [
     quantity: 1,
     wishlist: 0,
     add: 0,
-    category: "toddler-boy",
+    category: "Toddler boy",
   },
   {
     id: 34,
@@ -610,7 +610,7 @@ export const productList = [
     quantity: 1,
     wishlist: 0,
     add: 0,
-    category: "toddler-boy",
+    category: "Toddler boy",
   },
   {
     id: 35,
@@ -628,7 +628,7 @@ export const productList = [
     quantity: 1,
     wishlist: 0,
     add: 0,
-    category: "toddler-girl",
+    category: "Toddler girl",
   },
   {
     id: 36,
@@ -646,7 +646,7 @@ export const productList = [
     quantity: 1,
     wishlist: 0,
     add: 0,
-    category: "toddler-girl",
+    category: "Toddler girl",
   },
   {
     id: 37,
@@ -664,7 +664,7 @@ export const productList = [
     quantity: 1,
     wishlist: 0,
     add: 0,
-    category: "toddler-girl",
+    category: "Toddler girl",
   },
   {
     id: 38,
@@ -682,7 +682,7 @@ export const productList = [
     quantity: 1,
     wishlist: 0,
     add: 0,
-    category: "girl",
+    category: "Girl",
   },
   {
     id: 39,
@@ -700,7 +700,7 @@ export const productList = [
     quantity: 1,
     wishlist: 0,
     add: 0,
-    category: "boy",
+    category: "Boy",
   },
   {
     id: 40,
@@ -718,6 +718,6 @@ export const productList = [
     quantity: 1,
     wishlist: 0,
     add: 0,
-    category: "baby-boy",
+    category: "Baby boy",
   },
 ];

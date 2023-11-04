@@ -27,6 +27,10 @@
   color: #8587ff;
 }
 
+.shop__product-category p:active {
+  color: #8587ff;
+}
+
 .shop__product-age .checkbox {
   display: block;
 }

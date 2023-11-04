@@ -74,7 +74,7 @@ const Contact = () => {
               <Mail size={16} />
               <div className="contact__boxes-info">
                 <h4>Email</h4>
-                <p>+91-0512-383800</p>
+                <p>kido@gmail.com</p>
               </div>
             </div>
           </div>

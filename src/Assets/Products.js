@@ -712,7 +712,7 @@ export const productList = [
       />
     ),
     price: 799,
-    oldPrice: 999,
+    oldPrice: 6999,
     age: "6",
     ratings: 5,
     quantity: 1,

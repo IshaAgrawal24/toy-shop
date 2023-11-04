@@ -91,7 +91,7 @@ const Shop = () => {
           </button>
         </div>
         <div className="shop__product-container">
-          {selectList?.length > 0 &&
+          {selectList?.length > 0 ? (
             selectList.map((item, index) => {
               const key = index + item.name;
               return (
@@ -170,7 +170,10 @@ const Shop = () => {
                   </div>
                 </div>
               );
-            })}
+            })
+          ) : (
+            <p>No Product found!</p>
+          )}
         </div>
         {/* <div className="ProductMain">
           {selectList.map((item, index) => {

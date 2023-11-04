@@ -1,7 +1,6 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import { CartProvider } from "./Context";
-import Cart from "./Components/Cart";
 import Checkout from "./Components/Checkout";
 import Placeorder from "./Components/Placeorder";
 import Wishlist from "./Components/Wishlist/Wishlist";
@@ -11,6 +10,7 @@ import Home from "./Components/Panel/Home";
 import Shop from "./Components/Shop/Shop";
 import About from "./Components/AboutUs/About";
 import Contact from "./Components/Contact/Contact";
+import Cart from "./Cart/Cart";
 
 function App() {
   return (

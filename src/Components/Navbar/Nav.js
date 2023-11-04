@@ -70,7 +70,7 @@ const Nav = () => {
           </Link>
         </div>
         <div className="shoppingCart">
-          <Link to="/Cart">
+          <Link to="/cart">
             <ShoppingCart size={20} color="black" id="cart" />
           </Link>
         </div>

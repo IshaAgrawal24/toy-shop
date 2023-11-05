@@ -25,6 +25,12 @@ const Shop = () => {
     });
   }, []);
 
+  useEffect(() => {
+    if (addCart.length) {
+      setNumber(addCart.length);
+    }
+  }, [addCart.length]);
+
   const wishlistMethod = (id) => {
     setSelectList(
       selectList.map((item) => {
@@ -41,16 +47,16 @@ const Shop = () => {
   };
 
   const addToCart = (id) => {
-    console.log("id: ", id, "addcart: ", addCart);
-
     let count = 0;
-    setAddCart(
-      addCart.forEach((item) => {
-        if (id - 1 == item.id) {
-          count = count + 1;
-        }
-      })
-    );
+    if (addCart.length > 0) {
+      setAddCart(
+        addCart.forEach((item) => {
+          if (id == item.id) {
+            count = count + 1;
+          }
+        })
+      );
+    }
     if (count === 0) {
       setAddCart([...addCart, { ...selectList[id - 1] }]);
       setSelectList(
@@ -64,7 +70,6 @@ const Shop = () => {
       );
     }
   };
-  setNumber(addCart.length);
 
   // SINGLE DETAIL PAGE OPEN
   const quickViewFunc = (id) => {

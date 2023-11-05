@@ -20,6 +20,7 @@ export function CartProvider({ children }) {
   const [loggedUser, setLoggedUser] = useState("");
   const [count, setCount] = useState(1);
   const [inputs, setInputs] = useState("");
+  const [openCartDrawer, setOpenCartDrawer] = useState(false);
 
   // SEARCH FUNC
   const search = (event) => {
@@ -64,6 +65,8 @@ export function CartProvider({ children }) {
         search,
         display,
         setDisplay,
+        openCartDrawer,
+        setOpenCartDrawer,
       }}
     >
       {children}

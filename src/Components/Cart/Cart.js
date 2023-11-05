@@ -2,8 +2,8 @@ import React, { useEffect, useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Cart.css";
 import { Modal } from "@mui/material";
-import Nav from "../Components/Navbar/Nav";
-import CartContext from "../Context";
+import CartContext from "../../Context";
+import Nav from "../Navbar/Nav";
 
 const Cart = () => {
   let navigate = useNavigate();

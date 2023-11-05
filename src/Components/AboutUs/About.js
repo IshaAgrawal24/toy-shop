@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import "./About.css";
 import Nav from "../Navbar/Nav";
 import Footer from "../Footer/Footer";
-import Testimonial from "./Testimonial/Testimonial";
+import { Testimonial } from "./index";
 
 const About = () => {
   useEffect(() => {

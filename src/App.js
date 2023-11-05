@@ -3,14 +3,13 @@ import { Routes, Route } from "react-router-dom";
 import { CartProvider } from "./Context";
 import Checkout from "./Components/Checkout";
 import Placeorder from "./Components/Placeorder";
-import Wishlist from "./Components/Wishlist/Wishlist";
-import Login from "./Components/Auth/Login/Login";
-import Signup from "./Components/Auth/Signup/Signup";
+import { Wishlist } from "./Components/Wishlist";
+import { Login, Signup } from "./Components/Auth";
 import Home from "./Components/Panel/Home";
 import Shop from "./Components/Shop/Shop";
-import About from "./Components/AboutUs/About";
+import { About } from "./Components/AboutUs";
 import Contact from "./Components/Contact/Contact";
-import Cart from "./Cart/Cart";
+import { Cart } from "./Components/Cart";
 
 function App() {
   return (

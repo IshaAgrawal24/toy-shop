@@ -1,7 +1,9 @@
 import React from "react";
 import "./Advertisement.css";
+import { useNavigate } from "react-router-dom";
 
 const Advertisement = () => {
+  const navigate = useNavigate();
   return (
     <div className="advertisement-main">
       <div className="advertisment-container">
@@ -16,7 +18,7 @@ const Advertisement = () => {
             <div className="advertisement-content">
               <h3>Cute set for boys and girls</h3>
               <h2>Cotton Set</h2>
-              <button>Shop Now</button>
+              <button onClick={() => navigate("/shop")}>Shop Now</button>
             </div>
           </div>
 
@@ -24,7 +26,9 @@ const Advertisement = () => {
             <div className="advertisement-content">
               <h3>Top fabrics for kids</h3>
               <h2>Clothes made of cotton fabric</h2>
-              <button className="mb-30">Shop Now</button>
+              <button className="mb-30" onClick={() => navigate("/shop")}>
+                Shop Now
+              </button>
             </div>
             <div className="cotton-fabric-img">
               <img

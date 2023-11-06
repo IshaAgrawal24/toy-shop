@@ -1,18 +1,28 @@
 import React, { useEffect, useState, useContext } from "react";
-import { Link } from "react-router-dom";
 import "./Shop.css";
 import CartContext from "../../Context";
-import { Modal } from "@mui/material";
 import Nav from "../Navbar/Nav";
 import Breadcrums from "./Breadcrums/Breadcrums";
+import { Eye, Filter, Heart, ShoppingBag, Star } from "react-feather";
+import QuickView from "./Quickview/QuickView";
+import { Drawer, Tooltip } from "@mui/material";
+import Footer from "../Footer/Footer";
+import Category from "./Category/Category";
 
 const Shop = () => {
-  const [open, setOpen] = useState(false);
-  const [singleIndex, setSingleIndex] = useState();
-  const { selectList, setSelectList, addCart, setAddCart, setNumber, list } =
-    useContext(CartContext);
+  const {
+    selectList,
+    setSelectList,
+    addCart,
+    setAddCart,
+    setNumber,
+    setOpenCartDrawer,
+  } = useContext(CartContext);
 
-  console.log(selectList);
+  const [openQuickViewModal, setOpenQuickViewModal] = useState(false);
+  const [idQuickViewModal, setIdQuickViewModal] = useState();
+  const [openCategoryList, setOpenCategoryList] = useState(false);
+
   useEffect(() => {
     window.scrollTo({
       top: 0,
@@ -21,10 +31,16 @@ const Shop = () => {
     });
   }, []);
 
-  const wishlistMethod = (event) => {
+  useEffect(() => {
+    if (addCart.length) {
+      setNumber(addCart.length);
+    }
+  }, [addCart.length]);
+
+  const wishlistMethod = (id) => {
     setSelectList(
-      selectList.map((item, index) => {
-        if (index == event.currentTarget.id) {
+      selectList.map((item) => {
+        if (item.id == id) {
           if (item.wishlist == 0) {
             item.wishlist = 1;
           } else {
@@ -36,20 +52,24 @@ const Shop = () => {
     );
   };
 
-  const addToCart = (event) => {
+  const addToCart = (id) => {
     let count = 0;
-    setAddCart(
-      addCart.map((item) => {
-        if (event.currentTarget.className == item.id) {
-          count = count + 1;
-        }
-      })
-    );
+    if (addCart.length > 0) {
+      setAddCart(
+        addCart.filter((item) => {
+          if (id === item.id) {
+            count++;
+            item.quantity++;
+            return item;
+          } else return item;
+        })
+      );
+    }
     if (count === 0) {
-      setAddCart([...addCart, { ...selectList[event.currentTarget.id] }]);
+      setAddCart([...addCart, { ...selectList[id - 1] }]);
       setSelectList(
         selectList.filter((item) => {
-          if (event.currentTarget.className == item.id) {
+          if (id == item.id) {
             item.add = 1;
             return item;
           }
@@ -57,13 +77,13 @@ const Shop = () => {
         })
       );
     }
+    setOpenCartDrawer(true);
   };
-  setNumber(addCart.length);
 
   // SINGLE DETAIL PAGE OPEN
-  const singlPageOpen = (event) => {
-    setOpen(true);
-    setSingleIndex(event.currentTarget.id);
+  const quickViewFunc = (id) => {
+    setOpenQuickViewModal(true);
+    setIdQuickViewModal(id);
   };
 
   return (
@@ -73,20 +93,101 @@ const Shop = () => {
       </div>
       <Breadcrums />
       <div className="shop-container">
-        <div className="shop__filter-container"></div>
+        <div className="shop__category-container">
+          <div className="shop__category-lg">
+            <Category />
+          </div>
+          <button id="shop__category-md">
+            <Filter
+              tooltip="Filter"
+              onClick={() => setOpenCategoryList(true)}
+            />
+          </button>
+        </div>
         <div className="shop__product-container">
-          {selectList.map((item, index) => {
-            const key = index + item.name;
-            return (
-              <div className="single-product" key={key}>
-                <div className="single-product__img">{item.image}</div>
-                <div className="single-product__content">
-                  <p>{item.name}</p>
-                  <p>{item.price}</p>
+          {selectList?.length > 0 ? (
+            selectList.map((item, index) => {
+              const key = index + item.name;
+              return (
+                <div className="single-product" key={key}>
+                  <div className="single-product__img">
+                    {item.image}
+                    <div className="product__icon">
+                      <div className="tooltip-icons">
+                        <Tooltip title="Add to cart" placement="top">
+                          <ShoppingBag
+                            size={18}
+                            strokeWidth="1.2px"
+                            onClick={() => addToCart(item.id)}
+                          />
+                        </Tooltip>
+                      </div>
+                      <div className="tooltip-icons">
+                        <Tooltip title="wishlist" placement="top">
+                          {item.wishlist == 1 ? (
+                            <Heart
+                              size={18}
+                              fill="#1e2d5f"
+                              strokeWidth="1.2px"
+                              onClick={() => wishlistMethod(item.id)}
+                            />
+                          ) : (
+                            <Heart
+                              size={18}
+                              strokeWidth="1.2px"
+                              onClick={() => wishlistMethod(item.id)}
+                            />
+                          )}
+                        </Tooltip>
+                      </div>
+                      <div className="tooltip-icons">
+                        <Tooltip title="quick view" placement="top">
+                          <Eye
+                            size={18}
+                            onClick={() => quickViewFunc(item.id)}
+                            strokeWidth="1.2px"
+                          />
+                        </Tooltip>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="single-product__content">
+                    <div id="price">&#8377;{item.price}.00</div>
+                    <a
+                      href=""
+                      id="title"
+                      onClick={() => quickViewFunc(item.id)}
+                    >
+                      {item.name}
+                    </a>
+                    <div id="ratings">
+                      {Array(item.ratings)
+                        .fill("")
+                        .map((_, index) => {
+                          return (
+                            <span key={index}>
+                              <Star color="#FFA41C" fill="#FFA41C" size={16} />
+                            </span>
+                          );
+                        })}
+                      {item.ratings < 5 &&
+                        Array(5 - item.ratings)
+                          .fill("")
+                          .map((_, index) => {
+                            return (
+                              <span key={index}>
+                                <Star color="#FFA41C" size={16} />
+                              </span>
+                            );
+                          })}
+                    </div>
+                  </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })
+          ) : (
+            <p>No Product found!</p>
+          )}
         </div>
         {/* <div className="ProductMain">
           {selectList.map((item, index) => {
@@ -148,43 +249,28 @@ const Shop = () => {
             );
           })}
         </div> */}
-        <Modal open={open} onClose={() => setOpen(false)}>
-          <div id="modal">
-            {list.map((item, index) => {
-              return index == singleIndex ? (
-                <div className="mainModal">
-                  <div className="modalChild">
-                    <div className="modalImage">
-                      <img src={item.image} alt="" />
-                    </div>
-                    <div className="modalContent">
-                      <h4>{item.name}</h4>
-                      <div id="reviews">
-                        <i className="fa-solid fa-star"></i>
-                        <i className="fa-solid fa-star"></i>
-                        <i className="fa-solid fa-star"></i>
-                        <i className="fa-solid fa-star-half"></i>
-                      </div>
-                      <p>
-                        <span>
-                          &#8377;<del>5399.00</del>
-                        </span>
-                        &#8377;{item.price}.00
-                      </p>
-                    </div>
-                  </div>
-                  <p>
-                    <span>Details: &nbsp;</span>Lorem Ipsum is simply dummy text
-                    of the printing and typesetting industry. Lorem Ipsum has
-                    been the industry's standard dummy text ever since the
-                    1500s.
-                  </p>
-                </div>
-              ) : null;
-            })}
-          </div>
-        </Modal>
+        <Drawer
+          anchor="left"
+          open={openCategoryList}
+          onClose={() => setOpenCategoryList(!openCategoryList)}
+          sx={{
+            "& .MuiDrawer-paper": {
+              boxSizing: "border-box",
+              width: "200px",
+              padding: "30px 20px 0",
+            },
+          }}
+        >
+          <Category />
+        </Drawer>
+        <QuickView
+          idQuickViewModal={idQuickViewModal}
+          setOpenQuickViewModal={setOpenQuickViewModal}
+          openQuickViewModal={openQuickViewModal}
+          wishlistMethod={wishlistMethod}
+        />
       </div>
+      <Footer />
     </>
   );
 };

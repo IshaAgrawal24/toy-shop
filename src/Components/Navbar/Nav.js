@@ -3,10 +3,19 @@ import { Link } from "react-router-dom";
 import CartContext from "../../Context";
 import "./Nav.css";
 import { Heart, Search, ShoppingCart, User } from "react-feather";
+import CartDrawer from "../Cart/CartDrawer/CartDrawer";
 
 const Nav = () => {
-  const { number, setDisplay, display, inputs, setInputs, search } =
-    useContext(CartContext);
+  const {
+    number,
+    setDisplay,
+    display,
+    inputs,
+    setInputs,
+    search,
+    openCartDrawer,
+    setOpenCartDrawer,
+  } = useContext(CartContext);
 
   const searchIcon = () => {
     if (display.prev === "none") {
@@ -31,7 +40,8 @@ const Nav = () => {
       <div className="navContent" style={{ display: display.next }}>
         <Link to="/">Home</Link>
         <Link to="/shop">Shop</Link>
-        <Link to="/">Contact Us</Link>
+        <Link to="/contact">Contact Us</Link>
+        <Link to="/about">About us</Link>
       </div>
 
       {/* SearchBar  */}
@@ -69,12 +79,20 @@ const Nav = () => {
           </Link>
         </div>
         <div className="shoppingCart">
-          <Link to="/Cart">
-            <ShoppingCart size={20} color="black" id="cart" />
+          <Link>
+            <ShoppingCart
+              size={20}
+              color="black"
+              id="cart"
+              onClick={() => {
+                setOpenCartDrawer(!openCartDrawer);
+              }}
+            />
           </Link>
         </div>
         <span id="num">{number}</span>
       </div>
+      <CartDrawer />
     </div>
   );
 };

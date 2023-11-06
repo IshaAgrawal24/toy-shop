@@ -8,14 +8,6 @@
   background-color: #f7fbff;
 }
 
-#navFixed {
-  background-color: #c2e3ff;
-  position: fixed;
-  overflow: hidden;
-  width: 95%;
-  top: 0;
-}
-
 .cartPage {
   width: 55%;
   padding-top: 14%;

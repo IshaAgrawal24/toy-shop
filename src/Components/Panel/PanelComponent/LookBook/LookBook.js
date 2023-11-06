@@ -1,7 +1,9 @@
 import React from "react";
 import "./LookBook.css";
+import { useNavigate } from "react-router-dom";
 
 const LookBook = () => {
+  const navigate = useNavigate();
   return (
     <div className="lookBook-main">
       <div className="lookbook-container">
@@ -38,10 +40,8 @@ const LookBook = () => {
               alt="heart-image"
             />
             <p>Beautiful model, cute, soft feet </p>
-            {/* <p>cute, soft feet</p> */}
             <h2>Baby shoes</h2>
-            {/* <h2></h2> */}
-            <button>Shop Now</button>
+            <button onClick={() => navigate("/shop")}>Shop Now</button>
           </div>
         </div>
       </div>

@@ -5,12 +5,149 @@
 }
 .footer {
   margin-top: 60px;
-  background-color: #323355;
-  padding: 3%;
-  color: white;
-  text-align: center;
+  position: relative;
 }
-.footer span {
-  font-weight: 900;
-  font-family: "DynaPuff", cursive;
+
+.footer__container {
+  background: url("../../Utils/Footer/footer-bg.png") no-repeat;
+  background-position: contain;
+  background-size: cover;
+  width: 100%;
+  height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 30px;
+}
+
+.footer-connect {
+  width: 25%;
+}
+.footer-connect h4 {
+  margin-bottom: 8px;
+}
+
+.footer-connect p {
+  font-size: 14px;
+  letter-spacing: 1px;
+  line-break: loose;
+}
+
+.footer-connect__contact {
+  margin-top: 12px;
+}
+
+.footer-connect__contact .footer-connect__phone {
+  margin-bottom: 6px;
+  display: flex;
+}
+
+.footer-connect__contact .contact__icon {
+  margin-right: 12px;
+}
+
+.newsletter {
+  text-align: center;
+  width: 55%;
+}
+
+.newsletter h3 {
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+.newsletter p {
+  letter-spacing: 1px;
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+.newsletter .newsletter__email input {
+  background-color: #fff;
+  line-height: 40px;
+  height: 40px;
+  border-radius: 5px;
+  padding: 0 30px;
+  letter-spacing: 1px;
+  border: none;
+  width: 40%;
+}
+
+.newsletter .newsletter__email button {
+  height: 40px;
+  cursor: pointer;
+  background-color: #878aff;
+  border: none;
+  border-radius: 5px;
+  margin-left: 20px;
+  top: 50%;
+  padding: 0 24px;
+  color: #e8e7e7;
+}
+
+.extras {
+  width: 20%;
+}
+.extras ul {
+  margin-top: 12px;
+}
+
+.extras li {
+  list-style-type: none;
+  margin: 8px 0;
+}
+
+.extras li a {
+  text-decoration: none;
+  color: #1c1c1c;
+  font-weight: 400;
+}
+
+.extras li a:hover {
+  color: #878aff;
+}
+
+.footer-img {
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+}
+
+.footer-copyright {
+  position: absolute;
+  bottom: 15px;
+  left: 20px;
+  font-size: 14px;
+}
+
+.footer-copyright span {
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .footer__container {
+    grid-template-columns: auto;
+    height: 700px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .newsletter {
+    order: -1;
+    width: 95%;
+    margin: 0 auto 30px;
+  }
+
+  .newsletter .newsletter__email input {
+    width: 80%;
+  }
+
+  .footer-connect {
+    width: 50%;
+  }
+
+  .extras {
+    width: 90%;
+    margin-top: 30px;
+  }
 }

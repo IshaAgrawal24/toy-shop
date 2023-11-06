@@ -24,11 +24,12 @@
 }
 
 .navContent {
-  flex: 0 0 100%;
-  max-width: 40%;
+  width: 60%;
+  text-align: center;
 }
+
 .navContent a {
-  margin: 0 10%;
+  margin: 0 4%;
   font-family: "Dancing Script", cursive;
   font-family: "DynaPuff", cursive;
   color: black;

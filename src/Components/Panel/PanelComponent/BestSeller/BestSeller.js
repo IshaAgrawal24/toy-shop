@@ -10,11 +10,12 @@ const BestSeller = () => {
       <h2>Best Sellers</h2>
       <div className="bestSeller">
         {list.map((item, index) => {
+          const key = item.name + index;
           return (
             <>
               {index < 4 ? (
                 <Link to="/shop">
-                  <div className="bestSellerSingle" key={index}>
+                  <div className="bestSellerSingle" key={key}>
                     <div className="bestSingleImg">
                       {" "}
                       <img src={item.image} alt="" />

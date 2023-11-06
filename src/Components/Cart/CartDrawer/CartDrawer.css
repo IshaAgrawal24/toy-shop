@@ -5,6 +5,7 @@
 }
 
 .cartDrawer__head {
+  margin-right: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -26,7 +27,8 @@
 }
 
 .cartDrawer__container {
-  margin-top: 10px;
+  height: 70%;
+  margin: 10px 20px 0 0;
 }
 
 .cartDrawer__single {
@@ -81,4 +83,99 @@
   font-size: 14px;
   border: none;
   background: transparent;
+}
+
+.cartDrawer__bottom {
+  height: 30%;
+  margin-right: 20px;
+  /* border: 1px solid black; */
+}
+
+.cartDrawer__bottom-subtotal {
+  border-top: 1px solid #f1f1f1;
+  border-bottom: 1px solid #f1f1f1;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+}
+
+.cartDrawer__bottom-shipping {
+  margin: 10px 0;
+}
+
+.cartDrawer__bottom-shipping p {
+  font-size: 15px;
+}
+
+.total-percent {
+  margin: 20px 0;
+  position: relative;
+  width: 100%;
+  background: #e9e9e9;
+  height: 5px;
+  margin: 25px 0 35px;
+}
+.persent {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: #878aff;
+}
+
+.persent span {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #878aff;
+  font-size: 22px;
+  background: #fff;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border: 1px solid #878aff;
+}
+
+.cartDrawer__bottom-button {
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.cartDrawer__bottom-button button {
+  padding: 10px 0;
+  width: 50%;
+  border: none;
+  border-radius: 3px;
+  color: #dfdfdf;
+}
+
+.cartDrawer__bottom-button #checkOut {
+  background-color: #a0a0a0;
+}
+
+.cartDrawer__bottom-button #viewCart {
+  background-color: black;
+}
+
+.cartDrawer__bottom-button #checkOut:hover,
+#viewCart:hover {
+  background-color: #445eb4;
+}
+
+.empty-cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  height: 80%;
 }

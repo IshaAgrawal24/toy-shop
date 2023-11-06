@@ -11,8 +11,14 @@ import Footer from "../Footer/Footer";
 const Wishlist = () => {
   const [openQuickViewModal, setOpenQuickViewModal] = useState(false);
   const [idQuickViewModal, setIdQuickViewModal] = useState();
-  const { setNumber, setAddCart, addCart, selectList, setSelectList } =
-    useContext(CartContext);
+  const {
+    setNumber,
+    setAddCart,
+    addCart,
+    selectList,
+    setSelectList,
+    setOpenCartDrawer,
+  } = useContext(CartContext);
 
   useEffect(() => {
     window.scrollTo({
@@ -22,16 +28,25 @@ const Wishlist = () => {
     });
   }, []);
 
+  useEffect(() => {
+    if (addCart.length) {
+      setNumber(addCart.length);
+    }
+  }, [addCart.length]);
+
   const addToCart = (id) => {
     let count = 0;
-
-    setAddCart(
-      addCart.map((item) => {
-        if (id == item.id) {
-          count = count + 1;
-        }
-      })
-    );
+    if (addCart.length) {
+      setAddCart(
+        addCart.filter((item) => {
+          if (id === item.id) {
+            count++;
+            item.quantity++;
+            return item;
+          } else return item;
+        })
+      );
+    }
 
     if (count === 0) {
       setAddCart([...addCart, { ...selectList[id - 1] }]);
@@ -45,8 +60,8 @@ const Wishlist = () => {
         })
       );
     }
+    setOpenCartDrawer(true);
   };
-  setNumber(addCart.length);
 
   const quickViewModalFunc = (id) => {
     setOpenQuickViewModal(true);
@@ -120,7 +135,10 @@ const Wishlist = () => {
                     </span>
                   </div>
                 </div>
-                <button className="move-to-bag" onClick={() => addToCart()}>
+                <button
+                  className="move-to-bag"
+                  onClick={() => addToCart(item.id)}
+                >
                   Move to bag
                 </button>
               </div>

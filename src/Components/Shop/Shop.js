@@ -10,8 +10,14 @@ import Footer from "../Footer/Footer";
 import Category from "./Category/Category";
 
 const Shop = () => {
-  const { selectList, setSelectList, addCart, setAddCart, setNumber, list } =
-    useContext(CartContext);
+  const {
+    selectList,
+    setSelectList,
+    addCart,
+    setAddCart,
+    setNumber,
+    setOpenCartDrawer,
+  } = useContext(CartContext);
 
   const [openQuickViewModal, setOpenQuickViewModal] = useState(false);
   const [idQuickViewModal, setIdQuickViewModal] = useState();
@@ -50,10 +56,12 @@ const Shop = () => {
     let count = 0;
     if (addCart.length > 0) {
       setAddCart(
-        addCart.forEach((item) => {
-          if (id == item.id) {
-            count = count + 1;
-          }
+        addCart.filter((item) => {
+          if (id === item.id) {
+            count++;
+            item.quantity++;
+            return item;
+          } else return item;
         })
       );
     }
@@ -69,6 +77,7 @@ const Shop = () => {
         })
       );
     }
+    setOpenCartDrawer(true);
   };
 
   // SINGLE DETAIL PAGE OPEN

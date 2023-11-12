@@ -47,3 +47,18 @@
 .disabled-arrow {
   cursor: not-allowed;
 }
+
+@media screen and (max-width: 755px) and (min-width: 468px) {
+  .breadcrumps-category {
+    width: 90%;
+  }
+}
+
+@media (max-width: 468px) {
+  .breadcrumps {
+    height: 170px;
+  }
+  .breadcrumps-category {
+    display: none;
+  }
+}

@@ -135,7 +135,13 @@
   }
 }
 
-@media (max-width: 755px) {
+@media screen and (max-width: 755px) and (min-width: 468px) {
+  .shop__product-container {
+    grid-template-columns: auto auto;
+  }
+}
+
+@media (max-width: 468px) {
   .shop__product-container {
     grid-template-columns: auto;
   }

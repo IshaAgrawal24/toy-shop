@@ -6,7 +6,7 @@ import { Star } from "react-feather";
 import CartContext from "../../../Context";
 
 const Category = () => {
-  const { list, selectList, setSelectList } = useContext(CartContext);
+  const { list, setSelectList } = useContext(CartContext);
 
   const selectCategoryByGender = (name) => {
     setSelectList(

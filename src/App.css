@@ -14,10 +14,6 @@
   margin-bottom: 30px;
 }
 
-button {
-  cursor: pointer;
-}
-
 .col-malibu {
   color: #878aff;
 }
@@ -25,6 +21,14 @@ button {
 .font-ballu {
   font-family: "Baloo Bhai 2", sans-serif;
   font-family: "Montserrat Alternates", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
 }
 
 #navFixed {

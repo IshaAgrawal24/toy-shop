@@ -109,7 +109,7 @@ const CartDrawer = () => {
       sx={{
         "& .MuiDrawer-paper": {
           boxSizing: "border-box",
-          width: "35%",
+          width: "340px",
           padding: "20px 10px 10px 20px",
         },
       }}

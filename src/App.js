@@ -2,7 +2,6 @@ import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import { CartProvider } from "./Context";
 import Checkout from "./Components/Checkout";
-import Placeorder from "./Components/Placeorder";
 import { Wishlist } from "./Components/Wishlist";
 import { Login, Signup } from "./Components/Auth";
 import Home from "./Components/Panel/Home";
@@ -23,7 +22,6 @@ function App() {
           <Route path="/wishlist" element={<Wishlist />} />
           <Route path="/cart" element={<ViewCart />} />
           <Route path="/checkout" element={<Checkout />} />
-          <Route path="/placeorder" element={<Placeorder />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
         </Routes>

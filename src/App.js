@@ -9,7 +9,7 @@ import Home from "./Components/Panel/Home";
 import Shop from "./Components/Shop/Shop";
 import { About } from "./Components/AboutUs";
 import Contact from "./Components/Contact/Contact";
-import { Cart } from "./Components/Cart";
+import { ViewCart } from "./Components/Cart";
 
 function App() {
   return (
@@ -21,7 +21,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/wishlist" element={<Wishlist />} />
-          <Route path="/cart" element={<Cart />} />
+          <Route path="/cart" element={<ViewCart />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/placeorder" element={<Placeorder />} />
           <Route path="/login" element={<Login />} />

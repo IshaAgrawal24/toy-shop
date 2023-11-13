@@ -4,9 +4,10 @@ import CartContext from "../../../Context";
 import { Drawer } from "@mui/material";
 import { Minus, Plus, Truck } from "react-feather";
 import { Scrollbars } from "react-custom-scrollbars";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const CartDrawer = () => {
+  const navigate = useNavigate();
   const {
     openCartDrawer,
     setOpenCartDrawer,
@@ -199,7 +200,15 @@ const CartDrawer = () => {
             </div>
             <div className="cartDrawer__bottom-button">
               <button id="checkOut">Check Out</button>
-              <button id="viewCart">View Cart</button>
+              <button
+                id="viewCart"
+                onClick={() => {
+                  navigate("/cart");
+                  setOpenCartDrawer(false);
+                }}
+              >
+                View Cart
+              </button>
             </div>
           </div>
         </div>

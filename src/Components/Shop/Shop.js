@@ -29,6 +29,7 @@ const Shop = () => {
       left: 0,
       behavior: "smooth",
     });
+    setOpenCartDrawer(false);
   }, []);
 
   useEffect(() => {

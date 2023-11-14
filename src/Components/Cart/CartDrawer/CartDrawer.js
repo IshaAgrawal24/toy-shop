@@ -71,7 +71,6 @@ const CartDrawer = () => {
   const shippingWidthFunc = (subtotal) => {
     let width = "";
     const value = 1000 - subtotal;
-    console.log("value:", value);
     switch (value) {
       case value > 0 && value <= 300:
         width = "70%";
@@ -98,7 +97,6 @@ const CartDrawer = () => {
         width = "100%";
         break;
     }
-    console.log("width: ", width);
     return width;
   };
 

@@ -9,7 +9,6 @@ import Address from "./Address/Address";
 import Payment from "./Payment/Payment";
 
 const ViewCart = () => {
-  console.log("cart");
   const steps = ["Bag", "Address", "Payment"];
   const [activeStep, setActiveStep] = useState(0);
   const [allStepsCompleted, setAllStepsCompleted] = useState(false);

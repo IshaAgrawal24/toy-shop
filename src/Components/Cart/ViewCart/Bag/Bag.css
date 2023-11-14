@@ -10,6 +10,7 @@
 
 .bag__main {
   margin: 20px;
+  position: relative;
 }
 
 .bag__container {

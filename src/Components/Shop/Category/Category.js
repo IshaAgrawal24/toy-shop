@@ -17,17 +17,14 @@ const Category = () => {
   };
 
   const selectCategoryByPrice = (minPrice, maxPrice) => {
-    console.log(maxPrice, minPrice);
     setSelectList(
       list.filter((item) => {
         if (minPrice == 500) {
           if (item.price >= minPrice) {
-            console.log("enter lasrge");
             return item;
           }
         } else {
           if (item.price >= minPrice && item.price < maxPrice) {
-            console.log("enter");
             return item;
           }
         }

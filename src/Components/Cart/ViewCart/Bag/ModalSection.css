@@ -1,0 +1,67 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.modal__main {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 380px;
+  background-color: #fff;
+  border-radius: 3px;
+}
+
+.modal__child {
+  position: relative;
+  padding: 10px;
+}
+
+.modal__child span {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.modal__child h4 {
+  font-size: 14px;
+  color: #282c3f;
+  margin-bottom: 12px;
+}
+
+.modal__child p {
+  margin-bottom: 24px;
+  font-weight: 300;
+  font-size: 14px;
+  color: #282c3f;
+}
+
+.modal__action {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #eaeaec;
+  padding: 10px 0;
+}
+
+.modal__action div {
+  color: #eaeaec;
+}
+
+.modal__action button {
+  border: none;
+  background: transparent;
+  width: 100%;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #696b79;
+  height: 20px;
+  font-size: 12px;
+}
+
+.modal__action #wishlist {
+  color: #1976d2;
+}

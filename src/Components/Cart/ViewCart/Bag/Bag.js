@@ -57,7 +57,7 @@ const Bag = (_props) => {
         <div className="empty__cart">
           <div className="img">
             <img
-              src={require("../../../../Utils/empty cart.jpg")}
+              src={require("../../../../Utils/empty_cart.jpg")}
               alt="empty cart"
             />
           </div>

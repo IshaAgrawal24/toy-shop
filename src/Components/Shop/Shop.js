@@ -29,6 +29,7 @@ const Shop = () => {
       left: 0,
       behavior: "smooth",
     });
+    setOpenCartDrawer(false);
   }, []);
 
   useEffect(() => {
@@ -189,66 +190,7 @@ const Shop = () => {
             <p>No Product found!</p>
           )}
         </div>
-        {/* <div className="ProductMain">
-          {selectList.map((item, index) => {
-            return (
-              <div className="singleProduct" key={index}>
-                <div
-                  className="singleProductImg"
-                  id={index}
-                  onClick={singlPageOpen}
-                >
-                  {item.image}
-                </div>
-                <h4>{item.name}</h4>
-                <div id="reviews">
-                  <i className="fa-solid fa-star"></i>
-                  <i className="fa-solid fa-star"></i>
-                  <i className="fa-solid fa-star"></i>
 
-                  <i className="fa-solid fa-star-half"></i>
-                </div>
-                <div className="singlProductFlex">
-                  {item.wishlist == 1 ? (
-                    <div>
-                      <i
-                        className="fa-solid fa-heart"
-                        title="wishlist"
-                        id={index}
-                        onClick={wishlistMethod}
-                        style={{ color: "red" }}
-                      ></i>
-                    </div>
-                  ) : (
-                    <div>
-                      <i
-                        className="fa-regular fa-heart"
-                        title="wishlist"
-                        id={index}
-                        onClick={wishlistMethod}
-                        style={{ color: "red" }}
-                      ></i>
-                    </div>
-                  )}
-                  <div>
-                    <p>&#8377;{item.price}.00</p>
-                  </div>
-                  {item.add == 0 ? (
-                    <div className={item.id} id={index} onClick={addToCart}>
-                      <i
-                        className="fa-solid fa-basket-shopping"
-                        title="cart"
-                        style={{ color: "#878aff" }}
-                      ></i>
-                    </div>
-                  ) : (
-                    <Link to="/cart">Go</Link>
-                  )}
-                </div>
-              </div>
-            );
-          })}
-        </div> */}
         <Drawer
           anchor="left"
           open={openCategoryList}

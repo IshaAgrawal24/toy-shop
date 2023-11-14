@@ -8,7 +8,6 @@ import Advertisement from "./PanelComponent/Advertisement/Advertisement";
 import LookBook from "./PanelComponent/LookBook/LookBook";
 import Footer from "../Footer/Footer";
 import Header from "./PanelComponent/Header/Header";
-import BestSeller from "./PanelComponent/BestSeller/BestSeller";
 
 const Home = () => {
   useEffect(() => {
@@ -26,7 +25,6 @@ const Home = () => {
       </div>
       <Category />
       <Offers />
-      <BestSeller />
       <Advertisement />
       <Benefit />
       <LookBook />

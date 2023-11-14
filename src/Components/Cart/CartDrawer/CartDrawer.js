@@ -4,9 +4,10 @@ import CartContext from "../../../Context";
 import { Drawer } from "@mui/material";
 import { Minus, Plus, Truck } from "react-feather";
 import { Scrollbars } from "react-custom-scrollbars";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const CartDrawer = () => {
+  const navigate = useNavigate();
   const {
     openCartDrawer,
     setOpenCartDrawer,
@@ -70,7 +71,6 @@ const CartDrawer = () => {
   const shippingWidthFunc = (subtotal) => {
     let width = "";
     const value = 1000 - subtotal;
-    console.log("value:", value);
     switch (value) {
       case value > 0 && value <= 300:
         width = "70%";
@@ -97,7 +97,6 @@ const CartDrawer = () => {
         width = "100%";
         break;
     }
-    console.log("width: ", width);
     return width;
   };
 
@@ -109,7 +108,7 @@ const CartDrawer = () => {
       sx={{
         "& .MuiDrawer-paper": {
           boxSizing: "border-box",
-          width: "35%",
+          width: "340px",
           padding: "20px 10px 10px 20px",
         },
       }}
@@ -199,7 +198,15 @@ const CartDrawer = () => {
             </div>
             <div className="cartDrawer__bottom-button">
               <button id="checkOut">Check Out</button>
-              <button id="viewCart">View Cart</button>
+              <button
+                id="viewCart"
+                onClick={() => {
+                  navigate("/cart");
+                  setOpenCartDrawer(false);
+                }}
+              >
+                View Cart
+              </button>
             </div>
           </div>
         </div>

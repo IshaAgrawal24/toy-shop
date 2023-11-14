@@ -3,15 +3,21 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 .nav {
+  padding: 2%;
   width: 100%;
+  border-bottom: 1px solid hsla(0, 1%, 68%, 0.3);
+}
+
+.nav__main-lg {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2%;
 }
-.nav a {
-  text-decoration: none;
+
+.nav__main-md {
+  display: none;
 }
 
 /* LOGO  */
@@ -61,37 +67,96 @@
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
-  position: relative;
 }
+
 .icons a {
   border-radius: 5px;
   padding: 1.5%;
   margin-right: 20px;
 }
 
+.shoppingCart {
+  position: relative;
+}
+
 #num {
   position: absolute;
+  top: -9px;
+  right: 0px;
   border-radius: 50%;
   font-size: 12px;
   font-weight: 700;
   color: aliceblue;
   padding: 1px 6px;
-  top: -9px;
-  right: 2px;
   background-color: #9496da;
 }
 
-@media (max-width: 550px) {
-  .icons {
-    width: 30%;
-    margin-right: 3%;
+@media (max-width: 750px) {
+  .nav__main-lg {
+    display: none;
   }
-}
-@media (max-width: 505px) {
-  .searchBar {
-    width: 50%;
+
+  .nav__main-md {
+    display: block;
   }
-  .icons {
-    margin-right: 5%;
+
+  .nav-md__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav__drawer-data {
+    display: relative;
+  }
+
+  .nav__drawer-data span {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+  }
+
+  .nav__drawer-data #content {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav__drawer-data a {
+    margin: 18px 0;
+    color: black;
+  }
+
+  .nav__drawer-data a:hover {
+    color: #878aff;
+  }
+
+  .nav-md__bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    display: flex;
+    z-index: 100;
+    padding: 10px 15px 5px;
+    align-items: center;
+    box-shadow: 0 1px 12px 2px hsla(0, 0%, 56%, 0.3);
+    padding: 2% 8%;
+  }
+
+  .nav-md__bottom__icons {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-md__bottom__icons a {
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }

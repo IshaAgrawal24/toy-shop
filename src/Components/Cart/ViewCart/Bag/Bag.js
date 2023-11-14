@@ -3,8 +3,10 @@ import "./Bag.css";
 import CartContext from "../../../../Context";
 import { Check, CornerDownLeft } from "react-feather";
 import { CrossAction, MovetoWishlist, RemoveFromBag } from "./Modalsection";
+import { useNavigate } from "react-router-dom";
 
 const Bag = (_props) => {
+  const navigate = useNavigate();
   const { setActiveStep, activeStep } = _props;
   const { addCart } = useContext(CartContext);
   const [currentDate, setCurrentDate] = useState("");
@@ -51,7 +53,21 @@ const Bag = (_props) => {
 
   return (
     <div className="bag__main">
-      {addCart.length === 0 ? null : (
+      {addCart.length === 0 ? (
+        <div className="empty__cart">
+          <div className="img">
+            <img
+              src={require("../../../../Utils/empty cart.jpg")}
+              alt="empty cart"
+            />
+          </div>
+          <h3>Hey, it feels so light!</h3>
+          <p>There is nothing in your bag. Let's add some items.</p>
+          <button onClick={() => navigate("/wishlist")}>
+            Add Items from Wishlist
+          </button>
+        </div>
+      ) : (
         <div className="bag__container">
           <div className="bag__cart-items">
             {/* SELECTED PRODUCTS  */}

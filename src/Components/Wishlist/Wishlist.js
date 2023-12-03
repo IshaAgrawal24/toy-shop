@@ -79,7 +79,6 @@ const Wishlist = () => {
       })
     );
   };
-  console.log(selectList);
   return (
     <>
       <div id="navFixed">

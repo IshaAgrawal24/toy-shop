@@ -12,3 +12,12 @@
 .viewCart__tabs {
   margin: 40px;
 }
+
+@media screen and (max-width: 750px) {
+  .viewCart__stepper {
+    width: 90%;
+  }
+  .viewCart__tabs {
+    margin: 40px 1%;
+  }
+}

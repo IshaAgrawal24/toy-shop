@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import "./ViewCart.css";
 import Nav from "../../Navbar/Nav";
-import { useNavigate } from "react-router-dom";
-import { Step, StepButton, StepLabel, Stepper } from "@mui/material";
+import { Step, StepLabel, Stepper } from "@mui/material";
 import Thankyou from "./Thankyou";
 import Bag from "./Bag/Bag";
 import Address from "./Address/Address";
 import Payment from "./Payment/Payment";
+import Footer from "../../Footer/Footer";
 
 const ViewCart = () => {
   const steps = ["Bag", "Address", "Payment"];
@@ -46,6 +46,7 @@ const ViewCart = () => {
       <div className="viewCart__tabs">
         {allStepsCompleted ? <Thankyou /> : currentStep()}
       </div>
+      <Footer />
     </div>
   );
 };

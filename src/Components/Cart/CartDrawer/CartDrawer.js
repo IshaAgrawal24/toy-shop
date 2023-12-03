@@ -197,7 +197,6 @@ const CartDrawer = () => {
               </div>
             </div>
             <div className="cartDrawer__bottom-button">
-              <button id="checkOut">Check Out</button>
               <button
                 id="viewCart"
                 onClick={() => {

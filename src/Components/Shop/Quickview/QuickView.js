@@ -13,6 +13,28 @@ const QuickView = (_props) => {
   } = _props;
   const { selectList } = useContext(CartContext);
 
+  const quantityChangeFunc = (id, action) => {
+    if (action === "decrease") {
+      setAddCart(
+        addCart.filter((item) => {
+          if (item.id === id && item.quantity > 1) {
+            item.quantity--;
+            return item;
+          } else return item;
+        })
+      );
+    } else {
+      setAddCart(
+        addCart.filter((item) => {
+          if (item.id === id) {
+            item.quantity++;
+            return item;
+          } else return item;
+        })
+      );
+    }
+  };
+
   return (
     <Modal
       open={openQuickViewModal}
@@ -72,9 +94,17 @@ const QuickView = (_props) => {
                   </p>
                   <div className="modal-container__options">
                     <div className="quantity">
-                      <Minus size={16} className="quantity-icon" />
-                      <div>1</div>
-                      <Plus size={16} className="quantity-icon" />
+                      <Minus
+                        size={16}
+                        className="quantity-icon"
+                        onClick={() => quantityChangeFunc(item.id, "decrease")}
+                      />
+                      <div>{item.quantity}</div>
+                      <Plus
+                        size={16}
+                        className="quantity-icon"
+                        onClick={() => quantityChangeFunc(item.id, "increase")}
+                      />
                     </div>
 
                     <button className="cart">Add to Cart</button>

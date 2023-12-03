@@ -144,15 +144,9 @@
   border: 1px solid #878aff;
 }
 
-.cartDrawer__bottom-button {
-  display: flex;
-  justify-content: space-between;
-  gap: 25px;
-}
-
 .cartDrawer__bottom-button button {
   padding: 10px 0;
-  width: 50%;
+  width: 100%;
   border: none;
   border-radius: 3px;
   color: #dfdfdf;

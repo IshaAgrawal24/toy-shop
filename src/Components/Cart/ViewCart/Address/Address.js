@@ -160,7 +160,9 @@ const Address = (_props) => {
               return (
                 <div className="address__delievery--single">
                   <div className="address__img">{item.image}</div>
-                  <span>Delivery between </span>
+                  <span>
+                    Estimated Delivery in <b>2 days</b>
+                  </span>
                 </div>
               );
             })}

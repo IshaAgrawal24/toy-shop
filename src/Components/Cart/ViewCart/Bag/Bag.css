@@ -158,8 +158,7 @@
   padding: 16px 18px 12px;
 }
 
-.bag__total-coupons h3,
-.bag__total-price h3 {
+.bag__total-coupons h3 {
   font-size: 12px;
   font-weight: 700;
   color: #535766;
@@ -192,11 +191,6 @@
   letter-spacing: 0.3px;
 }
 
-.bag__total-price {
-  padding: 20px 0;
-}
-
-.bag__total-price-grid div,
 .bag__total-amount div {
   display: flex;
   justify-content: space-between;
@@ -204,11 +198,6 @@
   margin: 8px 0;
   font-size: 14px;
   color: #282c3f;
-}
-
-.bag__total-price-grid {
-  border-bottom: 1px solid #eaeaec;
-  padding-bottom: 20px;
 }
 
 .bag__total-amount div {
@@ -224,7 +213,7 @@
 
 .bag__total-place-order button {
   width: 100%;
-  padding: 4% 0;
+  padding: 3% 0;
   border-radius: 3px;
   font-size: 12px;
   letter-spacing: 1px;

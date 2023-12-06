@@ -1,0 +1,24 @@
+.bag__total-price h3 {
+  font-size: 12px;
+  font-weight: 700;
+  color: #535766;
+  margin-bottom: 14px;
+}
+
+.bag__total-price {
+  padding: 20px 0;
+}
+
+.bag__total-price-grid {
+  border-bottom: 1px solid #eaeaec;
+  padding-bottom: 20px;
+}
+
+.bag__total-price-grid div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 8px 0;
+  font-size: 14px;
+  color: #282c3f;
+}

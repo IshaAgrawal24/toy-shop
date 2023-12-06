@@ -4,14 +4,14 @@ import CartContext from "../../../../Context";
 import { Check, CornerDownLeft } from "react-feather";
 import { CrossAction, MovetoWishlist, RemoveFromBag } from "./Modalsection";
 import { useNavigate } from "react-router-dom";
+import TotalPrice from "../TotalPrice/TotalPrice";
 
 const Bag = (_props) => {
   const navigate = useNavigate();
   const { setActiveStep, activeStep } = _props;
   const { addCart } = useContext(CartContext);
   const [currentDate, setCurrentDate] = useState("");
-  const [totalMRP, setTotalMRP] = useState(0);
-  const [discountMRP, setDiscountMRP] = useState(0);
+
   const [openRemoveModal, setRemoveModal] = useState(false);
   const [openWishlistModal, setWishlistModal] = useState(false);
   const [openCrossModal, setCrossModal] = useState(false);
@@ -25,18 +25,6 @@ const Bag = (_props) => {
     const day = d.getDate();
     let currentDate = `${day}-${month}-${year}`;
     setCurrentDate(currentDate);
-
-    setTotalMRP(
-      addCart.reduce((total, item) => {
-        return total + item.oldPrice * item.quantity;
-      }, 0)
-    );
-
-    setDiscountMRP(
-      addCart.reduce((total, item) => {
-        return total + (item.oldPrice - item.price) * item.quantity;
-      }, 0)
-    );
   }, []);
 
   useEffect(() => {
@@ -168,28 +156,8 @@ const Bag = (_props) => {
               </div>
             </div>
             {/* TOTAL PRICE  */}
-            <div className="bag__total-price">
-              <h3>PRICE DETAILS&nbsp;({addCart.length} items)</h3>
-              <div className="bag__total-price-grid">
-                <div>
-                  <p>Total MRP</p>
-                  <p>&#8377;{totalMRP}.00</p>
-                </div>
-                <div>
-                  <p>Discount on MRP</p>
-                  <p style={{ color: "#03a685" }}>-&#8377;{discountMRP}.00</p>
-                </div>
-                <div>
-                  <p>Convenience Fee</p>
-                  <p>&#8377;99.00</p>
-                </div>
-              </div>
-              <div className="bag__total-amount">
-                <div>
-                  <p>Total Amount</p>
-                  <p>&#8377;{totalMRP - discountMRP}.00</p>
-                </div>
-              </div>
+            <div>
+              <TotalPrice />
               <div className="bag__total-place-order">
                 <button
                   className="txt-uppercase"

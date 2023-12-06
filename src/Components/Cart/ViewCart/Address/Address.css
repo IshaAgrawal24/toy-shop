@@ -65,8 +65,11 @@
   font-weight: 700;
 }
 
-.address__delievery--single {
+.address__delievery--date {
   margin: 20px 0;
+}
+
+.address__delievery--single {
   display: flex;
   gap: 10px;
   align-items: center;
@@ -78,4 +81,9 @@
 
 .address__delievery--single .address__img img {
   width: 100%;
+}
+
+.address__delievery--single span {
+  font-size: 13px;
+  color: #282c3f;
 }

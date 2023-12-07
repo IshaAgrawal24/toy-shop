@@ -172,8 +172,9 @@
 
 .bag__total-couponsInput input {
   width: 70%;
-  padding: 1.5% 0;
+  padding: 1.5%;
   margin-right: 5%;
+  border: 0.3px solid rgb(36, 36, 36);
 }
 
 .bag__total-couponsInput input:focus {
@@ -208,7 +209,7 @@
 }
 
 .bag__total-place-order {
-  margin-top: 30px;
+  margin-top: 3%;
 }
 
 .bag__total-place-order button {
@@ -278,13 +279,14 @@
   }
 }
 
-@media screen and(max-width:750px) {
+@media screen and (max-width: 750px) {
   .bag__main {
     margin: 20px 0;
   }
   .bag__cart-selected {
     margin: 1%;
   }
+
   .bag__cart-singleProduct .singleProduct-img {
     width: 100px;
     height: 130px;
@@ -293,5 +295,9 @@
 
   .bag__cart-singleProduct .singleProduct-content {
     width: calc(100% - 110px);
+  }
+
+  .bag__total-place-order button {
+    padding: 3% 0;
   }
 }

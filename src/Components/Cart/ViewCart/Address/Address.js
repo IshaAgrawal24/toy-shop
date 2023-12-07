@@ -156,9 +156,9 @@ const Address = (_props) => {
         <div className="address__delievery--estimates">
           <h6>Delivery Estimates</h6>
           <div className="address__delievery--date">
-            {addCart.map((item) => {
+            {addCart.map((item, index) => {
               return (
-                <div className="address__delievery--single">
+                <div className="address__delievery--single" key={index}>
                   <div className="address__img">{item.image}</div>
                   <span>
                     Estimated Delivery in <b>2 days</b>

@@ -33,6 +33,7 @@
 .address-details div input {
   width: 100%;
   padding: 1.3%;
+  border: 0.2px solid #1d1d1d;
 }
 
 .address-details div input:focus {
@@ -86,4 +87,20 @@
 .address__delievery--single span {
   font-size: 13px;
   color: #282c3f;
+}
+
+@media screen and (max-width: 630px) {
+  .address__container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .address__form--container,
+  .address__delievery--estimates {
+    max-width: 80%;
+    margin: auto;
+  }
+  .address-details div {
+    width: 100%;
+  }
 }

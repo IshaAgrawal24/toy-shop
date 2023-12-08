@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import "./Address.css";
 import CartContext from "../../../../Context";
 import TotalPrice from "../TotalPrice/TotalPrice";
+import { loadStripe } from "@stripe/stripe-js";
 
 const Address = (_props) => {
   const { addCart } = useContext(CartContext);
@@ -18,12 +19,6 @@ const Address = (_props) => {
   });
 
   useEffect(() => {
-    let date = new Date();
-    let newDate = date.getDate() + 5;
-    let newMonth = date.getMonth();
-  }, []);
-
-  useEffect(() => {
     window.scrollTo({
       top: 0,
       left: 0,
@@ -31,8 +26,35 @@ const Address = (_props) => {
     });
   }, []);
 
-  const continueFunc = () => {
+  const continueFunc = async () => {
     setActiveStep(activeStep + 1);
+    const stripe = await loadStripe(
+      "pk_test_51OKlNvSBkaXgGHW4HvYKLQXpkfIZ7tbtwXiPmIlyr66AekEbMtTaHNTR3appNPEJS98OzyyBUpMyNwbLGYLQiCRU00Sry3a3n7"
+    );
+    const body = {
+      products: [
+        {
+          productName: "toy",
+          price: "1299",
+        },
+      ],
+    };
+
+    const headers = {
+      "Content-Type": "application/json",
+    };
+    const response = await fetch(
+      "http://localhost:7000/api/create-checkout-session",
+      { method: "POST", headers: headers, body: JSON.stringify(body) }
+    );
+
+    const session = await response.json();
+    const result = stripe.redirectToCheckout({
+      sessionId: session.id,
+    });
+    if (result.error) {
+      console.log(result.error);
+    }
   };
   return (
     <div className="address__main">

@@ -11,7 +11,7 @@ const QuickView = (_props) => {
     openQuickViewModal,
     wishlistMethod,
   } = _props;
-  const { selectList } = useContext(CartContext);
+  const { selectList, addCart, setAddCart } = useContext(CartContext);
 
   const quantityChangeFunc = (id, action) => {
     if (action === "decrease") {

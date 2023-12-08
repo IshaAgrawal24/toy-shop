@@ -17,6 +17,7 @@ const Address = (_props) => {
     city: "",
     state: "",
   });
+  const [loader, setLoader] = useState(false);
 
   useEffect(() => {
     window.scrollTo({
@@ -27,17 +28,12 @@ const Address = (_props) => {
   }, []);
 
   const continueFunc = async () => {
-    setActiveStep(activeStep + 1);
+    setLoader(true);
     const stripe = await loadStripe(
       "pk_test_51OKlNvSBkaXgGHW4HvYKLQXpkfIZ7tbtwXiPmIlyr66AekEbMtTaHNTR3appNPEJS98OzyyBUpMyNwbLGYLQiCRU00Sry3a3n7"
     );
     const body = {
-      products: [
-        {
-          productName: "toy",
-          price: "1299",
-        },
-      ],
+      products: addCart,
     };
 
     const headers = {
@@ -55,6 +51,8 @@ const Address = (_props) => {
     if (result.error) {
       console.log(result.error);
     }
+    setLoader(false);
+    setActiveStep(activeStep + 1);
   };
   return (
     <div className="address__main">
@@ -192,7 +190,12 @@ const Address = (_props) => {
           <div className="address__price--details">
             <TotalPrice />
             <div className="bag__total-place-order">
-              <button className="txt-uppercase" onClick={() => continueFunc()}>
+              <button
+                className="txt-uppercase"
+                onLoad={true}
+                loader={true}
+                onClick={() => continueFunc()}
+              >
                 Continue
               </button>
             </div>

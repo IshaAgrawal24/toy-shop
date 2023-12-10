@@ -24,6 +24,7 @@ const Nav = () => {
     search,
     openCartDrawer,
     setOpenCartDrawer,
+    wishlistCount,
   } = useContext(CartContext);
 
   const searchIcon = () => {
@@ -85,12 +86,13 @@ const Nav = () => {
               <Search size={20} color="black" />
             </Link>
           </div>
-          <div>
+          <div className="show-count">
             <Link to="/wishlist">
               <Heart size={20} color="black" id="wishlist" />
             </Link>
+            <span className="show-count__num">{wishlistCount}</span>
           </div>
-          <div className="shoppingCart">
+          <div className="show-count">
             <Link>
               <ShoppingCart
                 size={20}
@@ -101,7 +103,7 @@ const Nav = () => {
                 }}
               />
             </Link>
-            <span id="num">{number}</span>
+            <span className="show-count__num">{number}</span>
           </div>
         </div>
         <CartDrawer />
@@ -120,7 +122,7 @@ const Nav = () => {
             <Link to="/">KIDO</Link>
           </div>
           <div className="icons">
-            <div className="shoppingCart">
+            <div className="show-count">
               <Link>
                 <ShoppingCart
                   size={20}
@@ -131,7 +133,7 @@ const Nav = () => {
                   }}
                 />
               </Link>
-              <span id="num">{number}</span>
+              <span className="show-count__num">{number}</span>
             </div>
           </div>
         </div>

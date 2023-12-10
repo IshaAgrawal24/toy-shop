@@ -11,12 +11,43 @@ const QuickView = (_props) => {
     openQuickViewModal,
     wishlistMethod,
   } = _props;
-  const { selectList, addCart, setAddCart } = useContext(CartContext);
+  const { selectList, setSelectList, addCart, setAddCart, setOpenCartDrawer } =
+    useContext(CartContext);
 
-  const quantityChangeFunc = (id, action) => {
-    if (action === "decrease") {
+  const addToCartFunc = (id) => {
+    let count = 0;
+    if (addCart.length > 0) {
       setAddCart(
         addCart.filter((item) => {
+          if (id === item.id) {
+            count++;
+            item.quantity++;
+            return item;
+          } else return item;
+        })
+      );
+    }
+    if (count === 0) {
+      setAddCart([...addCart, { ...selectList[id - 1] }]);
+      setSelectList(
+        selectList.filter((item) => {
+          if (id == item.id) {
+            item.add = 1;
+            return item;
+          }
+          return item;
+        })
+      );
+    }
+    setOpenCartDrawer(true);
+    setOpenQuickViewModal(false);
+  };
+  const quantityChangeFunc = (id, action) => {
+    if (action === "decrease") {
+      console.log("decrease");
+      setAddCart(
+        addCart.filter((item) => {
+          console.log("hello");
           if (item.id === id && item.quantity > 1) {
             item.quantity--;
             return item;
@@ -24,6 +55,7 @@ const QuickView = (_props) => {
         })
       );
     } else {
+      console.log("increase");
       setAddCart(
         addCart.filter((item) => {
           if (item.id === id) {
@@ -58,9 +90,9 @@ const QuickView = (_props) => {
                     <div>
                       {Array(item.ratings)
                         .fill("")
-                        .map((star) => {
+                        .map((_, index) => {
                           return (
-                            <span>
+                            <span key={index}>
                               <Star color="#FFA41C" fill="#FFA41C" size={15} />
                             </span>
                           );
@@ -68,9 +100,9 @@ const QuickView = (_props) => {
                       {item.ratings < 5 &&
                         Array(5 - item.ratings)
                           .fill("")
-                          .map((star) => {
+                          .map((_, index) => {
                             return (
-                              <span>
+                              <span key={index}>
                                 <Star color="#FFA41C" size={15} />
                               </span>
                             );
@@ -107,7 +139,12 @@ const QuickView = (_props) => {
                       />
                     </div>
 
-                    <button className="cart">Add to Cart</button>
+                    <button
+                      className="cart"
+                      onClick={() => addToCartFunc(item.id)}
+                    >
+                      Add to Cart
+                    </button>
 
                     <button
                       className="wishlist"

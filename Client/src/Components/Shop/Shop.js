@@ -17,6 +17,8 @@ const Shop = () => {
     setAddCart,
     setNumber,
     setOpenCartDrawer,
+    wishlistCount,
+    setWishlistCount,
   } = useContext(CartContext);
 
   const [openQuickViewModal, setOpenQuickViewModal] = useState(false);
@@ -43,9 +45,11 @@ const Shop = () => {
       selectList.map((item) => {
         if (item.id == id) {
           if (item.wishlist == 0) {
+            setWishlistCount(wishlistCount + 1);
             item.wishlist = 1;
           } else {
             item.wishlist = 0;
+            if (wishlistCount > 0) setWishlistCount(wishlistCount - 1);
           }
         }
         return item;

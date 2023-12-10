@@ -72,17 +72,17 @@
 .icons a {
   border-radius: 5px;
   padding: 1.5%;
-  margin-right: 20px;
+  margin-right: 25px;
 }
 
-.shoppingCart {
+.show-count {
   position: relative;
 }
 
-#num {
+.show-count__num {
   position: absolute;
   top: -9px;
-  right: 0px;
+  right: 10px;
   border-radius: 50%;
   font-size: 12px;
   font-weight: 700;

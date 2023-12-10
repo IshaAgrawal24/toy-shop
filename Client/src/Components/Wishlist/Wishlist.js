@@ -18,6 +18,8 @@ const Wishlist = () => {
     selectList,
     setSelectList,
     setOpenCartDrawer,
+    wishlistCount,
+    setWishlistCount,
   } = useContext(CartContext);
 
   useEffect(() => {
@@ -78,6 +80,7 @@ const Wishlist = () => {
         return item;
       })
     );
+    setWishlistCount(wishlistCount - 1);
   };
   return (
     <>

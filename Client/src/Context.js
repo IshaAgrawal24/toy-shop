@@ -14,6 +14,7 @@ export function CartProvider({ children }) {
   const [addCart, setAddCart] = useState([]);
   const [amount, setAmount] = useState(0);
   const [number, setNumber] = useState(0);
+  const [wishlistCount, setWishlistCount] = useState(0);
   const [isSubmit, setIsSubmit] = useState(false);
   const [isLogged, setIsLogged] = useState(false);
   const [userArr, setUserArr] = useState([]);
@@ -67,6 +68,8 @@ export function CartProvider({ children }) {
         setDisplay,
         openCartDrawer,
         setOpenCartDrawer,
+        wishlistCount,
+        setWishlistCount,
       }}
     >
       {children}

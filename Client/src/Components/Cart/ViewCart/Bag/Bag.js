@@ -5,6 +5,7 @@ import { Check, CornerDownLeft } from "react-feather";
 import { CrossAction, MovetoWishlist, RemoveFromBag } from "./Modalsection";
 import { useNavigate } from "react-router-dom";
 import TotalPrice from "../TotalPrice/TotalPrice";
+import { couponCodeArr } from "../../../../Assets/CouponCode";
 
 const Bag = (_props) => {
   const navigate = useNavigate();
@@ -16,6 +17,10 @@ const Bag = (_props) => {
   const [openWishlistModal, setWishlistModal] = useState(false);
   const [openCrossModal, setCrossModal] = useState(false);
   const [selectedId, setSelectedId] = useState(0);
+  const [couponCode, setCouponCode] = useState({
+    val: "",
+    exist: null,
+  });
 
   useEffect(() => {
     const d = new Date();
@@ -37,6 +42,13 @@ const Bag = (_props) => {
 
   const removeItemFunc = () => {
     setRemoveModal(true);
+  };
+
+  const couponApplyFunc = () => {
+    if (couponCode.val !== "") {
+      const existCode = couponCodeArr.includes(couponCode.val);
+      setCouponCode({ ...couponCode, exist: existCode });
+    }
   };
 
   return (
@@ -151,9 +163,30 @@ const Bag = (_props) => {
                   name="coupons"
                   id="coupons"
                   placeholder="Coupon code"
+                  value={couponCode.val}
+                  onChange={(event) =>
+                    setCouponCode({
+                      val: event.target.value.toUpperCase(),
+                      exist: null,
+                    })
+                  }
                 />
-                <button className="txt-uppercase">Apply</button>
+                <button
+                  className={
+                    couponCode.val === ""
+                      ? "txt-uppercase disable-coupon--btn"
+                      : "txt-uppercase"
+                  }
+                  onClick={() => couponApplyFunc()}
+                >
+                  Apply
+                </button>
               </div>
+              <p id="coupon-error--msg">
+                {couponCode.exist === false
+                  ? "Sorry, this coupon isn't valid for this user account."
+                  : ""}
+              </p>
             </div>
             {/* TOTAL PRICE  */}
             <div>

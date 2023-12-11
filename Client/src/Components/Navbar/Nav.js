@@ -157,11 +157,12 @@ const Nav = () => {
                 <p>Search</p>
               </Link>
             </div>
-            <div>
+            <div className="show-count">
               <Link to="/wishlist">
                 <Heart size={20} id="wishlist" />
                 <p>Wishlist</p>
               </Link>
+              <span className="show-count__num">{wishlistCount}</span>
             </div>
           </div>
         </div>

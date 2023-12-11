@@ -8,6 +8,15 @@
   margin: 20px;
 }
 
+#alert-msg {
+  padding: 12px 22px 12px 42px;
+  margin: 0 0 24px;
+  background-color: #f7f6f7;
+  color: #515151;
+  border-top: 3px solid #b81c23;
+  width: 100%;
+}
+
 .address__container {
   display: flex;
   gap: 10px;

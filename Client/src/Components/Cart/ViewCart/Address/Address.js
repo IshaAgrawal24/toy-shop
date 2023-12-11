@@ -3,6 +3,7 @@ import "./Address.css";
 import CartContext from "../../../../Context";
 import TotalPrice from "../TotalPrice/TotalPrice";
 import { loadStripe } from "@stripe/stripe-js";
+import { AlertCircle } from "react-feather";
 
 const Address = (_props) => {
   const { addCart } = useContext(CartContext);
@@ -17,7 +18,9 @@ const Address = (_props) => {
     city: "",
     state: "",
   });
+  const { name, mobile, pincode, address, town, city, state } = formDetails;
   const [loader, setLoader] = useState(false);
+  const [showErrorAlert, setShowErrorAlert] = useState("");
 
   useEffect(() => {
     window.scrollTo({
@@ -27,35 +30,64 @@ const Address = (_props) => {
     });
   }, []);
 
-  const continueFunc = async () => {
-    setLoader(true);
-    const stripe = await loadStripe(
-      "pk_test_51OKlNvSBkaXgGHW4HvYKLQXpkfIZ7tbtwXiPmIlyr66AekEbMtTaHNTR3appNPEJS98OzyyBUpMyNwbLGYLQiCRU00Sry3a3n7"
-    );
-    const body = {
-      products: addCart,
-    };
-
-    const headers = {
-      "Content-Type": "application/json",
-    };
-    const response = await fetch(
-      "http://localhost:7000/api/create-checkout-session",
-      { method: "POST", headers: headers, body: JSON.stringify(body) }
-    );
-
-    const session = await response.json();
-    const result = stripe.redirectToCheckout({
-      sessionId: session.id,
-    });
-    if (result.error) {
-      console.log(result.error);
+  const checkValidation = () => {
+    if (
+      name === "" ||
+      mobile === "" ||
+      pincode === "" ||
+      address === "" ||
+      town === "" ||
+      city === "" ||
+      state === ""
+    ) {
+      setShowErrorAlert("Fill all the fields");
+      return false;
+    } else {
+      setShowErrorAlert("");
+      return true;
     }
-    setLoader(false);
-    setActiveStep(activeStep + 1);
+  };
+
+  const continueFunc = async () => {
+    const validation = checkValidation();
+    if (validation) {
+      setLoader(true);
+      const stripe = await loadStripe(
+        "pk_test_51OKlNvSBkaXgGHW4HvYKLQXpkfIZ7tbtwXiPmIlyr66AekEbMtTaHNTR3appNPEJS98OzyyBUpMyNwbLGYLQiCRU00Sry3a3n7"
+      );
+      const body = {
+        products: addCart,
+      };
+
+      const headers = {
+        "Content-Type": "application/json",
+      };
+      const response = await fetch(
+        "http://localhost:7000/api/create-checkout-session",
+        { method: "POST", headers: headers, body: JSON.stringify(body) }
+      );
+
+      const session = await response.json();
+      const result = stripe.redirectToCheckout({
+        sessionId: session.id,
+      });
+      if (result.error) {
+        console.log(result.error);
+      }
+      setLoader(false);
+      setActiveStep(activeStep + 1);
+    }
   };
   return (
     <div className="address__main">
+      {showErrorAlert && (
+        <p id="alert-msg">
+          <span style={{ paddingRight: "10px" }}>
+            <AlertCircle size={16} color="#b81c23" />
+          </span>
+          Fill all the required fields!
+        </p>
+      )}
       <div className="address__container">
         <div className="address__form--container">
           <h4>Select Delivery Address</h4>
@@ -70,9 +102,15 @@ const Address = (_props) => {
                   placeholder="Name*"
                   required
                   value={formDetails.name}
-                  onChange={(event) =>
-                    setFormDetails({ ...formDetails, name: event.target.value })
-                  }
+                  onChange={(event) => {
+                    if (event.target.value.match("^[a-zA-Z\\s]*$")) {
+                      setFormDetails({
+                        ...formDetails,
+                        name: event.target.value,
+                      });
+                    }
+                  }}
+                  // onBlur={() => }
                 />
               </div>
               <div>
@@ -83,12 +121,14 @@ const Address = (_props) => {
                   placeholder="Mobile No.*"
                   required
                   value={formDetails.mobile}
-                  onChange={(event) =>
-                    setFormDetails({
-                      ...formDetails,
-                      mobile: event.target.value,
-                    })
-                  }
+                  onChange={(event) => {
+                    if (event.target.value.match("/^d$")) {
+                      setFormDetails({
+                        ...formDetails,
+                        mobile: event.target.value,
+                      });
+                    }
+                  }}
                 />
               </div>
             </div>
@@ -190,12 +230,7 @@ const Address = (_props) => {
           <div className="address__price--details">
             <TotalPrice />
             <div className="bag__total-place-order">
-              <button
-                className="txt-uppercase"
-                onLoad={true}
-                loader={true}
-                onClick={() => continueFunc()}
-              >
+              <button className="txt-uppercase" onClick={() => continueFunc()}>
                 Continue
               </button>
             </div>

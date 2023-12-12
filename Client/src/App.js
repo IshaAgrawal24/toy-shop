@@ -7,9 +7,7 @@ import Home from "./Components/Panel/Home";
 import Shop from "./Components/Shop/Shop";
 import { About } from "./Components/AboutUs";
 import Contact from "./Components/Contact/Contact";
-import { ViewCart } from "./Components/Cart";
-import Success from "./Components/Cart/Success";
-import Cancel from "./Components/Cart/Cancel";
+import { ViewCart, Success, Cancel } from "./Components/Cart";
 
 function App() {
   return (
@@ -22,11 +20,10 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/wishlist" element={<Wishlist />} />
           <Route path="/cart" element={<ViewCart />} />
+          <Route path="/success" element={<Success />} />
+          <Route path="/cancel" element={<Cancel />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
-          <Route path="/success" element={<Success />} />
-
-          <Route path="/cancel" element={<Cancel />} />
         </Routes>
       </CartProvider>
     </div>

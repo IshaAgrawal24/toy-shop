@@ -74,8 +74,9 @@ const Address = (_props) => {
       if (result.error) {
         console.log(result.error);
       }
-      setLoader(false);
+
       setActiveStep(activeStep + 1);
+      setLoader(false);
     }
   };
   return (
@@ -110,7 +111,11 @@ const Address = (_props) => {
                       });
                     }
                   }}
-                  // onBlur={() => }
+                  onBlur={(event) => {
+                    if (name === "") {
+                      console.log("helo");
+                    }
+                  }}
                 />
               </div>
               <div>
@@ -122,7 +127,8 @@ const Address = (_props) => {
                   required
                   value={formDetails.mobile}
                   onChange={(event) => {
-                    if (event.target.value.match("/^d$")) {
+                    console.log(event.target.value);
+                    if (event.target.value.match("^[0-9]")) {
                       setFormDetails({
                         ...formDetails,
                         mobile: event.target.value,
@@ -231,7 +237,7 @@ const Address = (_props) => {
             <TotalPrice />
             <div className="bag__total-place-order">
               <button className="txt-uppercase" onClick={() => continueFunc()}>
-                Continue
+                {loader ? "Loading..." : "Continue"}
               </button>
             </div>
           </div>

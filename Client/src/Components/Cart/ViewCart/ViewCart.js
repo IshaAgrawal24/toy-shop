@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./ViewCart.css";
 import Nav from "../../Navbar/Nav";
 import { Step, StepLabel, Stepper } from "@mui/material";
-import Thankyou from "./Thankyou";
 import Bag from "./Bag/Bag";
 import Address from "./Address/Address";
 import Payment from "./Payment/Payment";
@@ -44,7 +43,7 @@ const ViewCart = () => {
         </Stepper>
       </div>
       <div className="viewCart__tabs">
-        {allStepsCompleted ? <Thankyou /> : currentStep()}
+        {allStepsCompleted ? "" : currentStep()}
       </div>
       <Footer />
     </div>

@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./Breadcrums.css";
 import { productCategoryList } from "../../../Assets/ProductCetegory";
 import { ChevronLeft, ChevronRight } from "react-feather";
+import CartContext from "../../../Context";
 
 const Breadcrums = () => {
+  const { list, setSelectList } = useContext(CartContext);
   const [showIndex, setShowIndex] = useState(4);
   const leftSlide = () => {
     if (showIndex > 4) {
@@ -12,9 +14,17 @@ const Breadcrums = () => {
   };
 
   const rightSlide = () => {
-    if (showIndex !== 7) {
+    if (showIndex !== 6) {
       setShowIndex(showIndex + 1);
     }
+  };
+
+  const selectCategoryByImage = (name) => {
+    setSelectList(
+      list.filter((item) => {
+        return item.category === name;
+      })
+    );
   };
 
   return (
@@ -31,23 +41,25 @@ const Breadcrums = () => {
         </div>
         <div className="shop-category-list">
           {productCategoryList.map((item, index) => {
-            return (
-              <div className="single-category" key={index}>
-                {index >= showIndex - 4 && index <= showIndex ? (
+            if (index >= showIndex - 4 && index <= showIndex)
+              return (
+                <div className="single-category" key={index}>
                   <>
-                    <div className="category-img">{item.image}</div>
+                    <div
+                      className="category-img"
+                      onClick={() => selectCategoryByImage(item.name)}
+                    >
+                      {item.image}
+                    </div>
                     <p>{item.name}</p>
                   </>
-                ) : (
-                  ""
-                )}
-              </div>
-            );
+                </div>
+              );
           })}
         </div>
         <div
           className={`breadcrumps-arrow ${
-            showIndex === 7 ? "disabled-arrow" : ""
+            showIndex === 6 ? "disabled-arrow" : ""
           } `}
           onClick={() => rightSlide()}
         >

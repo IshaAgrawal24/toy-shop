@@ -5,6 +5,7 @@ import { Drawer } from "@mui/material";
 import { Minus, Plus, Truck } from "react-feather";
 import { Scrollbars } from "react-custom-scrollbars";
 import { Link, useNavigate } from "react-router-dom";
+import { shippingWidthFunc } from "../function";
 
 const CartDrawer = () => {
   const navigate = useNavigate();
@@ -67,38 +68,6 @@ const CartDrawer = () => {
     setNumber(addCart.length);
     subTotalFunc();
   }, [addCart.length]);
-
-  const shippingWidthFunc = (subtotal) => {
-    let width = "";
-    const value = 1000 - subtotal;
-    switch (value) {
-      case value > 0 && value <= 300:
-        width = "70%";
-        break;
-      case value > 300 && value <= 400:
-        width = "60%";
-        break;
-      case value > 400 && value <= 500:
-        width = "50%";
-        break;
-      case value > 500 && value <= 600:
-        width = "40%";
-        break;
-      case value > 600 && value <= 700:
-        width = "30%";
-        break;
-      case value > 700 && value <= 800:
-        width = "20%";
-        break;
-      case value > 900 && value < 1000:
-        width = "10%";
-        break;
-      default:
-        width = "100%";
-        break;
-    }
-    return width;
-  };
 
   return (
     <Drawer
@@ -180,7 +149,7 @@ const CartDrawer = () => {
           <div className="cartDrawer__bottom-shipping">
             {amount < 1000 ? (
               <p>
-                Spend <b>&#8377;{1000 - amount}</b> more and get{" "}
+                Spend <b>&#8377;{1000 - amount}</b> more and get
                 <b>free shipping!</b>
               </p>
             ) : (
@@ -188,7 +157,7 @@ const CartDrawer = () => {
             )}
             <div className="total-percent">
               <div
-                className="persent"
+                className="percent"
                 style={{ width: shippingWidthFunc(amount) }}
               >
                 <span>

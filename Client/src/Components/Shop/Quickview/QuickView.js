@@ -42,12 +42,11 @@ const QuickView = (_props) => {
     setOpenCartDrawer(true);
     setOpenQuickViewModal(false);
   };
+
   const quantityChangeFunc = (id, action) => {
     if (action === "decrease") {
-      console.log("decrease");
-      setAddCart(
-        addCart.filter((item) => {
-          console.log("hello");
+      setSelectList(
+        selectList.filter((item) => {
           if (item.id === id && item.quantity > 1) {
             item.quantity--;
             return item;
@@ -55,9 +54,8 @@ const QuickView = (_props) => {
         })
       );
     } else {
-      console.log("increase");
-      setAddCart(
-        addCart.filter((item) => {
+      setSelectList(
+        selectList.filter((item) => {
           if (item.id === id) {
             item.quantity++;
             return item;

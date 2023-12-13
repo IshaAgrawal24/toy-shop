@@ -45,6 +45,5 @@ export const shippingWidthFunc = (subtotal) => {
       width = "100%";
     }
   }
-  console.log(width);
   return width;
 };

@@ -36,10 +36,6 @@ const Header = () => {
     setCurrentIndex(currentIndex + 1);
   };
 
-  const shopNow = () => {
-    navigate("/shop");
-  };
-
   return (
     <div className="header-main">
       <div className="header-container">
@@ -63,7 +59,7 @@ const Header = () => {
                   <div className="carousel-content">
                     <p>{item.description}</p>
                     <h1>{item.heading}</h1>
-                    <button onClick={() => shopNow()}>Shop Now</button>
+                    <button onClick={() => navigate("/shop")}>Shop Now</button>
                   </div>
                   <div className="carousel-img">
                     <div className="main-img">{item.mainImg}</div>

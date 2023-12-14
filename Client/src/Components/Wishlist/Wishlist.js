@@ -1,9 +1,7 @@
 import React, { useState, useContext, useEffect } from "react";
-import { Link } from "react-router-dom";
 import "./Wishlist.css";
 import Nav from "../Navbar/Nav";
 import CartContext from "../../Context";
-import { Modal } from "@mui/material";
 import { Star } from "react-feather";
 import QuickView from "../Shop/Quickview/QuickView";
 import Footer from "../Footer/Footer";
@@ -15,6 +13,8 @@ const Wishlist = () => {
     setNumber,
     setAddCart,
     addCart,
+    list,
+    setList,
     selectList,
     setSelectList,
     setOpenCartDrawer,
@@ -51,9 +51,9 @@ const Wishlist = () => {
     }
 
     if (count === 0) {
-      setAddCart([...addCart, { ...selectList[id - 1] }]);
-      setSelectList(
-        selectList.filter((item) => {
+      setAddCart([...addCart, { ...list[id - 1] }]);
+      setList(
+        list.filter((item) => {
           if (id == item.id) {
             item.add = 1;
             return item;
@@ -82,6 +82,7 @@ const Wishlist = () => {
     );
     setWishlistCount(wishlistCount - 1);
   };
+
   return (
     <>
       <div id="navFixed">
@@ -92,7 +93,7 @@ const Wishlist = () => {
           <h1>Wishlist</h1>
         </div>
         <div className="wishlistMain">
-          {selectList.map((item, index) => {
+          {list.map((item, index) => {
             return item.wishlist == 1 ? (
               <div className="singleWishlist__product" key={index}>
                 <div

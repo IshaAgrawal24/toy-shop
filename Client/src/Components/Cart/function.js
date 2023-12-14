@@ -38,7 +38,7 @@ export const shippingWidthFunc = (subtotal) => {
   let width = "";
   for (const item of ranges) {
     const [start, end] = item.range;
-    if (value > start && value <= end) {
+    if (value >= start && value <= end) {
       width = item.width;
       break;
     } else if (value < 0) {

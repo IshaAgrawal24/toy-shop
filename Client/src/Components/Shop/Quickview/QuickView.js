@@ -11,8 +11,14 @@ const QuickView = (_props) => {
     openQuickViewModal,
     wishlistMethod,
   } = _props;
-  const { selectList, setSelectList, addCart, setAddCart, setOpenCartDrawer } =
-    useContext(CartContext);
+  const {
+    list,
+    selectList,
+    setSelectList,
+    addCart,
+    setAddCart,
+    setOpenCartDrawer,
+  } = useContext(CartContext);
 
   const addToCartFunc = (id) => {
     let count = 0;
@@ -28,9 +34,9 @@ const QuickView = (_props) => {
       );
     }
     if (count === 0) {
-      setAddCart([...addCart, { ...selectList[id - 1] }]);
+      setAddCart([...addCart, { ...list[id - 1] }]);
       setSelectList(
-        selectList.filter((item) => {
+        list.filter((item) => {
           if (id == item.id) {
             item.add = 1;
             return item;

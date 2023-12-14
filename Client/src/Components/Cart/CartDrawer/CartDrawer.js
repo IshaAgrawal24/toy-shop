@@ -23,6 +23,7 @@ const CartDrawer = () => {
     if (addCart.length) {
       setNumber(addCart.length);
     }
+    console.log(addCart);
   }, [addCart.length]);
 
   const removeProductfromList = (id) => {

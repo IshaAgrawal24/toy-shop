@@ -11,6 +11,8 @@ import Category from "./Category/Category";
 
 const Shop = () => {
   const {
+    list,
+    setList,
     selectList,
     setSelectList,
     addCart,
@@ -58,6 +60,7 @@ const Shop = () => {
   };
 
   const addToCart = (id) => {
+    console.log(id);
     let count = 0;
     if (addCart.length > 0) {
       setAddCart(
@@ -71,9 +74,9 @@ const Shop = () => {
       );
     }
     if (count === 0) {
-      setAddCart([...addCart, { ...selectList[id - 1] }]);
-      setSelectList(
-        selectList.filter((item) => {
+      setAddCart([...addCart, { ...list[id - 1] }]);
+      setList(
+        list.filter((item) => {
           if (id == item.id) {
             item.add = 1;
             return item;

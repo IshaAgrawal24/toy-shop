@@ -5,7 +5,7 @@ import { ChevronLeft, ChevronRight } from "react-feather";
 import CartContext from "../../../Context";
 
 const Breadcrums = () => {
-  const { list, setSelectList } = useContext(CartContext);
+  const { list, setSelectList, selectList } = useContext(CartContext);
   const [showIndex, setShowIndex] = useState(4);
   const leftSlide = () => {
     if (showIndex > 4) {

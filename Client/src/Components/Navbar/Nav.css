@@ -5,7 +5,7 @@
 }
 
 .nav {
-  padding: 2%;
+  padding: 0 2%;
   width: 100%;
   border-bottom: 1px solid hsla(0, 1%, 68%, 0.3);
 }
@@ -27,11 +27,13 @@
   font-size: 23px;
   font-family: "Dancing Script", cursive;
   font-family: "DynaPuff", cursive;
+  padding: 2% 0;
 }
 
 .navContent {
   width: 60%;
   text-align: center;
+  padding: 2% 0;
 }
 
 .navContent a {
@@ -50,16 +52,23 @@
 #search {
   margin-left: 10%;
   flex: 0 0 100%;
-  max-width: 100%;
-  border: none;
+  width: 80%;
   background: rgba(255, 255, 255, 0.5);
-  background: none;
-  border-bottom: 1px solid gray;
-  padding: 2%;
+  border: 1px solid #ccc;
+  border-radius: 40px 0 0 40px;
+  padding: 1.2% 0 1.2% 1%;
 }
 
 #search:focus {
   outline: none;
+}
+
+.searchBar #cross {
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid #ccc;
+  border-radius: 0 40px 40px 0;
+  padding: 0.28% 2% 1.1% 2%;
+  cursor: pointer;
 }
 
 /* CART  */
@@ -67,6 +76,7 @@
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
+  padding: 2% 0;
 }
 
 .icons a {

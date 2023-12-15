@@ -42,6 +42,10 @@ const Nav = () => {
   };
 
   const [openNavDrawer, setNavDrawer] = useState(false);
+
+  const removeSearch = () => {
+    searchIcon();
+  };
   return (
     <div className="nav">
       {/* LOGO  */}
@@ -64,12 +68,12 @@ const Nav = () => {
               type="search"
               id="search"
               name="search"
-              placeholder="Search Here.."
+              placeholder={`Search here...`}
               value={inputs}
               onChange={(event) => setInputs(event.target.value)}
             />
-            <span>
-              <i className="fa-solid fa-magnifying-glass"></i>
+            <span id="cross" onClick={() => removeSearch()}>
+              X
             </span>
           </form>
         </div>

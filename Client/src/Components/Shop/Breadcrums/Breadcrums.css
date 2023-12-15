@@ -5,8 +5,8 @@
 }
 
 .breadcrumps {
-  margin: 6% 0;
-  height: 400px;
+  margin: 5% 0;
+  height: 330px;
   width: 100%;
   background: url("../../../Utils/Shop/bg-breadcrumb.jpg") no-repeat;
   background-position: center;
@@ -20,14 +20,15 @@
 
 .breadcrumps-category {
   display: flex;
-  width: 60%;
-  gap: 10px;
+  width: 50%;
+  gap: 12px;
   justify-content: center;
   align-items: center;
 }
 
 .shop-category-list {
   display: flex;
+  justify-content: space-between;
   overflow: hidden;
   flex-wrap: nowrap;
 }
@@ -36,8 +37,7 @@
   text-align: center;
   overflow: hidden;
   flex: 0 0 100%;
-  max-width: 14%;
-  margin: 0 22px;
+  max-width: 13%;
 }
 
 .breadcrumps-arrow {

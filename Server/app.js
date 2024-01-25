@@ -1,12 +1,15 @@
 const express = require("express");
-const app = express();
+const router = require("./Routes/productRoute");
+
 const cors = require("cors");
 const stripe = require("stripe")(
   "sk_test_51OKlNvSBkaXgGHW4K0hPRYRLsA0nBLNoS8kOdvW9aAXF3TYR9RC3ymEO2ratRZCd82sFNUS5tz08z6ZJ1st77Gxo00XfCUU0gC"
 );
-
+const app = express();
 app.use(express.json());
 app.use(cors());
+
+app.use("/api", router);
 
 // CHECKOUT API
 app.post("/api/create-checkout-session", async (req, res) => {
@@ -35,6 +38,4 @@ app.post("/api/create-checkout-session", async (req, res) => {
   res.json({ id: session.id });
 });
 
-app.listen(7000, () => {
-  console.log("Server Started");
-});
+module.exports = app;

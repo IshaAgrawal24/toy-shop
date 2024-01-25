@@ -10,7 +10,7 @@ import { couponCodeArr } from "../../../../Assets/CouponCode";
 const Bag = (_props) => {
   const navigate = useNavigate();
   const { setActiveStep, activeStep } = _props;
-  const { addCart } = useContext(CartContext);
+  const { addCart, isLogged } = useContext(CartContext);
   const [currentDate, setCurrentDate] = useState("");
 
   const [openRemoveModal, setRemoveModal] = useState(false);
@@ -48,6 +48,14 @@ const Bag = (_props) => {
     if (couponCode.val !== "") {
       const existCode = couponCodeArr.includes(couponCode.val);
       setCouponCode({ ...couponCode, exist: existCode });
+    }
+  };
+
+  const placeOrderFunc = () => {
+    if (isLogged) {
+      setActiveStep(activeStep + 1);
+    } else {
+      navigate("/login");
     }
   };
 
@@ -194,7 +202,7 @@ const Bag = (_props) => {
               <div className="bag__total-place-order">
                 <button
                   className="txt-uppercase"
-                  onClick={() => setActiveStep(activeStep + 1)}
+                  onClick={() => placeOrderFunc()}
                 >
                   Place Order
                 </button>

@@ -1,7 +1,7 @@
 export const productList = [
   {
     id: 1,
-    name: "Panda Soft Teddy ",
+    name: "Panda Soft Teddy",
     image: (
       <img
         src={require("../Utils/ProductImages/toys/soft-panda.png")}

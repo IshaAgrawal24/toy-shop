@@ -23,7 +23,7 @@ const Login = () => {
           setIsLogged(true);
           setLoggedUser(item.email);
           if (number !== 0) {
-            navigate("/checkout");
+            navigate("/cart");
           } else {
             navigate("/");
           }

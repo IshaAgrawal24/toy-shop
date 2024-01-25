@@ -56,7 +56,14 @@ const Header = () => {
             <div className="carousel-main" key={item.title}>
               {currentIndex === index ? (
                 <>
-                  <div className="carousel-content">
+                  <div
+                    className="carousel-content"
+                    // style={{
+                    //   transform:
+                    //     "translateX(-100px) translateY(0px) translateZ(0px)",
+                    //   opacity: 0,
+                    // }}
+                  >
                     <p>{item.description}</p>
                     <h1>{item.heading}</h1>
                     <button onClick={() => navigate("/shop")}>Shop Now</button>
